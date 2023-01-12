@@ -48,10 +48,10 @@ namespace Spektrix.Widgets
             this.songTitle.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
             this.songAuthor.FontSize = SystemParameters.PrimaryScreenHeight * 0.010;
 
-            //mediaManager.OnAnySessionOpened += Initialize;
-            mediaManager.OnAnySessionOpened += MediaManager_OnAnySessionOpened;
-            mediaManager.OnAnySessionClosed += MediaManager_OnAnySessionClosed;
-            mediaManager.OnFocusedSessionChanged += MediaManager_OnFocusedSessionChanged;
+            mediaManager.OnAnySessionOpened += Initialize;
+            //mediaManager.OnAnySessionOpened += MediaManager_OnAnySessionOpened;
+            //mediaManager.OnAnySessionClosed += MediaManager_OnAnySessionClosed;
+            //mediaManager.OnFocusedSessionChanged += MediaManager_OnFocusedSessionChanged;
             mediaManager.Start();
         }
 
