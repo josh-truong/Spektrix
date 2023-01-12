@@ -1,0 +1,281 @@
+﻿<UserControl x:Class="Spektrix.Widgets.NetworkMonitor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spektrix.Widgets"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" >
+    <Border x:Name="root_border" 
+            BorderBrush="AntiqueWhite"
+            BorderThickness="3"
+            CornerRadius="10" >
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <TextBlock x:Name="title" 
+                       Foreground="White"
+                       Margin="0,0,0,5"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       TextDecorations="Underline"
+                       Text="NETWORK"/>
+            </Grid>
+            <Grid x:Name="wifi_ipv4" Grid.Row="1"
+                  MouseEnter="Initialize" MouseLeave="Uninitialize" MouseDown="SetWifiVisibility">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="wifi_ipv4_col0" 
+                       Grid.Column="0"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       Margin="10,0,0,0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       Text="WI-FI IPv4:"/>
+                <TextBlock x:Name="wifi_ipv4_col1" 
+                       Grid.Column="1"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       Text="___.__.__.__"/>
+            </Grid>
+            <Grid x:Name="ethernet_ipv4" Grid.Row="2"
+                  MouseEnter="Initialize" MouseLeave="Uninitialize" MouseDown="SetEthernetVisibility">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="ethernet_ipv4_col0" 
+                       Grid.Column="0"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       Margin="10,0,0,0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center" 
+                       Text="Ethernet IPv4:"/>
+                <TextBlock x:Name="ethernet_ipv4_col1" 
+                       Grid.Column="1"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       Text="___.__.__.__"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="speed_col0" 
+                       Grid.Column="0"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       Margin="10,0,0,0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center" 
+                       Text="--- B/s"/>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Viewbox Grid.Column="0"
+                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Image VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage UriSource="pack://application:,,,/Resources/Assets/Received.png" />
+                            </Image.Source>
+                        </Image>
+                    </Viewbox>
+                    <TextBlock x:Name="speed_col1" 
+                       Grid.Column="1"
+                       Grid.ColumnSpan="3"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       Text="Speed"/>
+                    <Viewbox Grid.Column="4"
+                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Image VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage UriSource="pack://application:,,,/Resources/Assets/Sent.png" />
+                            </Image.Source>
+                        </Image>
+                    </Viewbox>
+                </Grid>
+                <TextBlock x:Name="speed_col2" 
+                       Grid.Column="2"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       Text="--- B/s"/>
+            </Grid>
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="peak_col0" 
+                       Grid.Column="0"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       Margin="10,0,0,0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center" 
+                       Text="--- MB/s"/>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Viewbox Grid.Column="0"
+                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Image VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage UriSource="pack://application:,,,/Resources/Assets/Received.png" />
+                            </Image.Source>
+                        </Image>
+                    </Viewbox>
+                    <TextBlock x:Name="peak_col1" 
+                       Grid.Column="1"
+                       Grid.ColumnSpan="3"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       Text="Peak"/>
+                    <Viewbox Grid.Column="4"
+                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Image VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage UriSource="pack://application:,,,/Resources/Assets/Sent.png" />
+                            </Image.Source>
+                        </Image>
+                    </Viewbox>
+                </Grid>
+                <TextBlock x:Name="peak_col2" 
+                       Grid.Column="2"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       Text="kB/s"/>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="sum_col0" 
+                       Grid.Column="0"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       Margin="10,0,0,0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center" 
+                       Text="--- GB"/>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Viewbox Grid.Column="0"
+                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Image VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage UriSource="pack://application:,,,/Resources/Assets/Received.png" />
+                            </Image.Source>
+                        </Image>
+                    </Viewbox>
+                    <TextBlock x:Name="sum_col1" 
+                       Grid.Column="1"
+                       Grid.ColumnSpan="3"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       Text="SUM"/>
+                    <Viewbox Grid.Column="4"
+                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Image VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Stretch="UniformToFill">
+                            <Image.Source>
+                                <BitmapImage UriSource="pack://application:,,,/Resources/Assets/Sent.png" />
+                            </Image.Source>
+                        </Image>
+                    </Viewbox>
+                </Grid>
+                <TextBlock x:Name="sum_col2" 
+                       Grid.Column="2"
+                       Foreground="White"
+                       FontFamily="{StaticResource Baksheesh}"
+                       FontStyle="Normal"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       Text="--- GB"/>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
