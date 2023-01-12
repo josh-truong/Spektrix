@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="Spektrix.Widgets.MultiMedia"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spektrix.Widgets"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+
+    <Grid x:Name="root">
+        <Border x:Name="root_border"
+                BorderBrush="AntiqueWhite"
+                BorderThickness="3"
+                CornerRadius="10">
+            <Grid Margin="1,5,1,5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Viewbox Grid.Column="0">
+                            <Image x:Name="previous" MouseDown="Previous" />
+                        </Viewbox>
+
+                        <Viewbox Grid.Column="1">
+                            <Image x:Name="play_pause" MouseDown="PlayPause" />
+                        </Viewbox>
+                        <Viewbox Grid.Column="2">
+                            <Image x:Name="next" MouseDown="Next" />
+                        </Viewbox>
+                        <Viewbox Grid.Column="3">
+                            <Image x:Name="volume_mute" MouseDown="VolumeMute" />
+                        </Viewbox>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Grid.RowSpan="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="songTitle" Foreground="White" Margin="0,0,10,0"
+                                   Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3"
+                                   VerticalAlignment="Center" HorizontalAlignment="Right" />
+                        <TextBlock x:Name="songAuthor" Foreground="White" Margin="0,0,10,0"
+                                   Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"
+                                   VerticalAlignment="Center" HorizontalAlignment="Right"/>
+
+                        <Viewbox Grid.Row="1" Grid.RowSpan="5"
+                                 Grid.Column="0" Grid.ColumnSpan="2">
+                            <Image x:Name="songImage" HorizontalAlignment="Left" />
+                        </Viewbox>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
