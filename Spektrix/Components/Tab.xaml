@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Spektrix.Components.Tab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spektrix.Components"
+             mc:Ignorable="d" 
+             x:Name="root"
+             d:DesignHeight="100" d:DesignWidth="300"
+             MouseEnter="Initialize" MouseLeave="Uninitialize" MouseDown="UpdateGroup">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Grid.ColumnSpan="8">
+            <Viewbox VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Image 
+                    x:Name="IconSrc"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
+                    Stretch="UniformToFill"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Column="10" Grid.ColumnSpan="10">
+            <Viewbox Stretch="Uniform">
+                <TextBlock 
+                    Name="Id"
+                    Margin="0,1,1,1"
+                    Foreground="White"
+                    FontFamily="{StaticResource Baksheesh}"
+                    FontStyle="Normal"
+                    TextWrapping="WrapWithOverflow"
+                    TextAlignment="Center"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" />
+            </Viewbox>
+        </Grid>
+    </Grid>
+</UserControl>

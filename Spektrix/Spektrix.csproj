@@ -1,0 +1,1341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{591283CC-D3BA-45C2-80B6-4136696CE87A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Spektrix</RootNamespace>
+    <AssemblyName>Spektrix</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Code\ApplicationResources.cs" />
+    <Compile Include="Code\ApplicationSettings.cs" />
+    <Compile Include="Code\InstalledApplication.cs" />
+    <Compile Include="Code\MainApplicationBackground.cs" />
+    <Compile Include="Code\WindowsMediaController.cs" />
+    <Compile Include="Widgets\Calandar.xaml.cs">
+      <DependentUpon>Calandar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\CpuRamMonitor.xaml.cs">
+      <DependentUpon>CpuRamMonitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\DateTimeDisplay.xaml.cs">
+      <DependentUpon>DateTimeDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\DiskMonitor.xaml.cs">
+      <DependentUpon>DiskMonitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\MultiMedia.xaml.cs">
+      <DependentUpon>MultiMedia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\NetworkMonitor.xaml.cs">
+      <DependentUpon>NetworkMonitor.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Components\Launcher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\Calandar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\CpuRamMonitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\DateTimeDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\Tab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\TabBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\Group.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Launcher.xaml.cs">
+      <DependentUpon>Launcher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Tab.xaml.cs">
+      <DependentUpon>Tab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\TabBar.xaml.cs">
+      <DependentUpon>TabBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Group.xaml.cs">
+      <DependentUpon>Group.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Widgets\DiskMonitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\MultiMedia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\NetworkMonitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Resource Include="Resources\Fonts\Baksheesh-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Baksheesh-Thin.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Baksheesh.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Borda.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nexa Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Fonts\Nexa Light.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\003.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\004.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\005.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\006.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\007.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\008.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\009.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\010.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\012.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\013.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\014.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\015.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\016.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\018.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\019.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\020.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\021.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\022.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\023.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\026.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\027.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\028.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\029.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\030.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\031.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\032.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\033.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\034.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\035.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\036.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\037.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\038.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\039.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\040.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\041.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\042.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\043.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\044.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\045.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\046.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\047.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\048.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\049.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\050.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\051.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\052.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\053.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\054.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\055.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\056.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\057.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\058.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\059.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\060.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\061.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\062.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\063.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\064.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\065.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\066.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\067.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\068.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\069.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\070.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\071.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\072.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\073.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\074.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\075.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\076.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\077.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\078.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\079.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\080.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\081.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\082.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\083.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\084.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\085.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\086.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\087.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\088.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\089.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\090.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\091.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\092.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\093.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\094.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\095.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\096.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\097.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\098.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\106.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\109.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\115.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\116.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\117.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\118.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\017.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\BF1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\EBF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\FTL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\GabeN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\GabeN2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\GabeN2Episode1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\GBF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\Gmod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\GOG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\KanColle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\KSP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\KSP2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\KSP3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\MassEffect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\Minecraft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\Neptunia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\Ori.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\Overwatch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\PlagueInc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\Portal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\Reddit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\SmugAnimeFace1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\SmugAnimeFace2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\Stanley.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\Stardew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\TF2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\Undertale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\Undertale2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AppIcons\4Chan.png" />
+    <Resource Include="Resources\AppIcons\500px.png" />
+    <Resource Include="Resources\AppIcons\8chan.png" />
+    <Resource Include="Resources\AppIcons\Access.png" />
+    <Resource Include="Resources\AppIcons\Acrobat.png" />
+    <Resource Include="Resources\AppIcons\Afterburner.png" />
+    <Resource Include="Resources\AppIcons\AIMP.png" />
+    <Resource Include="Resources\AppIcons\Airbnb.png" />
+    <Resource Include="Resources\AppIcons\AlphaCoders.png" />
+    <Resource Include="Resources\AppIcons\Amazon.png" />
+    <Resource Include="Resources\AppIcons\Android.png" />
+    <Resource Include="Resources\AppIcons\Apple.png" />
+    <Resource Include="Resources\AppIcons\Applications.png" />
+    <Resource Include="Resources\AppIcons\ArtStation.png" />
+    <Resource Include="Resources\AppIcons\Audacity.png" />
+    <Resource Include="Resources\AppIcons\Audible.png" />
+    <Resource Include="Resources\AppIcons\Baidu.png" />
+    <Resource Include="Resources\AppIcons\Balance.png" />
+    <Resource Include="Resources\AppIcons\Bandcamp.png" />
+    <Resource Include="Resources\AppIcons\Basecamp.png" />
+    <Resource Include="Resources\AppIcons\Batman.png" />
+    <Resource Include="Resources\AppIcons\BBC.png" />
+    <Resource Include="Resources\AppIcons\Beatport.png" />
+    <Resource Include="Resources\AppIcons\Behance.png" />
+    <Resource Include="Resources\AppIcons\bilibili.png" />
+    <Resource Include="Resources\AppIcons\Bing.png" />
+    <Resource Include="Resources\AppIcons\BitTorrent.png" />
+    <Resource Include="Resources\AppIcons\Blackberry.png" />
+    <Resource Include="Resources\AppIcons\Blogger.png" />
+    <Resource Include="Resources\AppIcons\Bluestacks.png" />
+    <Resource Include="Resources\AppIcons\BluRay.png" />
+    <Resource Include="Resources\AppIcons\Box.png" />
+    <Resource Include="Resources\AppIcons\BTC.png" />
+    <Resource Include="Resources\AppIcons\Calculator.png" />
+    <Resource Include="Resources\AppIcons\Cardboard.png" />
+    <Resource Include="Resources\AppIcons\Cards.png" />
+    <Resource Include="Resources\AppIcons\carrot.png" />
+    <Resource Include="Resources\AppIcons\CCleaner.png" />
+    <Resource Include="Resources\AppIcons\CheatEngine.png" />
+    <Resource Include="Resources\AppIcons\Chrome.png" />
+    <Resource Include="Resources\AppIcons\Circles.png" />
+    <Resource Include="Resources\AppIcons\Cnet.png" />
+    <Resource Include="Resources\AppIcons\Codecademy.png" />
+    <Resource Include="Resources\AppIcons\CombinedCommunityCodec.png" />
+    <Resource Include="Resources\AppIcons\Console.png" />
+    <Resource Include="Resources\AppIcons\Cookie.png" />
+    <Resource Include="Resources\AppIcons\Crunchyroll.png" />
+    <Resource Include="Resources\AppIcons\Cydia.png" />
+    <Resource Include="Resources\AppIcons\Dailymotion.png" />
+    <Resource Include="Resources\AppIcons\Database.png" />
+    <Resource Include="Resources\AppIcons\Defrag.png" />
+    <Resource Include="Resources\AppIcons\Delicious.png" />
+    <Resource Include="Resources\AppIcons\Deluge.png" />
+    <Resource Include="Resources\AppIcons\deviantART.png" />
+    <Resource Include="Resources\AppIcons\Diamond.png" />
+    <Resource Include="Resources\AppIcons\Dice.png" />
+    <Resource Include="Resources\AppIcons\digg.png" />
+    <Resource Include="Resources\AppIcons\Discord.png" />
+    <Resource Include="Resources\AppIcons\DisplayPort.png" />
+    <Resource Include="Resources\AppIcons\Disqus.png" />
+    <Resource Include="Resources\AppIcons\DMM.png" />
+    <Resource Include="Resources\AppIcons\DNA.png" />
+    <Resource Include="Resources\AppIcons\Document.png" />
+    <Resource Include="Resources\AppIcons\DonutChart.png" />
+    <Resource Include="Resources\AppIcons\Douban.png" />
+    <Resource Include="Resources\AppIcons\Dribbble.png" />
+    <Resource Include="Resources\AppIcons\Dropbox.png" />
+    <Resource Include="Resources\AppIcons\DuckDuckGo.png" />
+    <Resource Include="Resources\AppIcons\Duolingo.png" />
+    <Resource Include="Resources\AppIcons\ebay.png" />
+    <Resource Include="Resources\AppIcons\Edge.png" />
+    <Resource Include="Resources\AppIcons\EquestriaDaily.png" />
+    <Resource Include="Resources\AppIcons\ETH.png" />
+    <Resource Include="Resources\AppIcons\etsy.png" />
+    <Resource Include="Resources\AppIcons\Evernote.png" />
+    <Resource Include="Resources\AppIcons\Evolve.png" />
+    <Resource Include="Resources\AppIcons\Excel.png" />
+    <Resource Include="Resources\AppIcons\Exchange.png" />
+    <Resource Include="Resources\AppIcons\Facebook.png" />
+    <Resource Include="Resources\AppIcons\Fanfiction.png" />
+    <Resource Include="Resources\AppIcons\Feedly.png" />
+    <Resource Include="Resources\AppIcons\Film.png" />
+    <Resource Include="Resources\AppIcons\Firefox.png" />
+    <Resource Include="Resources\AppIcons\Flattr.png" />
+    <Resource Include="Resources\AppIcons\Flickr.png" />
+    <Resource Include="Resources\AppIcons\Foobar2000.png" />
+    <Resource Include="Resources\AppIcons\Fork.png" />
+    <Resource Include="Resources\AppIcons\Forrst.png" />
+    <Resource Include="Resources\AppIcons\Foursquare.png" />
+    <Resource Include="Resources\AppIcons\Fraps.png" />
+    <Resource Include="Resources\AppIcons\FunnyJunk.png" />
+    <Resource Include="Resources\AppIcons\GabeN.png" />
+    <Resource Include="Resources\AppIcons\Gallery.png" />
+    <Resource Include="Resources\AppIcons\GeforceExperience.png" />
+    <Resource Include="Resources\AppIcons\Gelbooru.png" />
+    <Resource Include="Resources\AppIcons\Gmail.png" />
+    <Resource Include="Resources\AppIcons\Google+.png" />
+    <Resource Include="Resources\AppIcons\Google.png" />
+    <Resource Include="Resources\AppIcons\GoogleClassroom.png" />
+    <Resource Include="Resources\AppIcons\GoogleDocs.png" />
+    <Resource Include="Resources\AppIcons\GoogleDrive.png" />
+    <Resource Include="Resources\AppIcons\GoogleEarth.png" />
+    <Resource Include="Resources\AppIcons\GoogleHangouts.png" />
+    <Resource Include="Resources\AppIcons\GoogleInbox.png" />
+    <Resource Include="Resources\AppIcons\GooglePlay.png" />
+    <Resource Include="Resources\AppIcons\GooglePlayMusic.png" />
+    <Resource Include="Resources\AppIcons\GoogleScholar.png" />
+    <Resource Include="Resources\AppIcons\GoogleTranslate.png" />
+    <Resource Include="Resources\AppIcons\Groove.png" />
+    <Resource Include="Resources\AppIcons\GrooveShark.png" />
+    <Resource Include="Resources\AppIcons\Gun.png" />
+    <Resource Include="Resources\AppIcons\Gyazo.png" />
+    <Resource Include="Resources\AppIcons\HackerNews.png" />
+    <Resource Include="Resources\AppIcons\Hamachi.png" />
+    <Resource Include="Resources\AppIcons\HDD.png" />
+    <Resource Include="Resources\AppIcons\hiFive.png" />
+    <Resource Include="Resources\AppIcons\Hitbox.png" />
+    <Resource Include="Resources\AppIcons\Houzz.png" />
+    <Resource Include="Resources\AppIcons\hudl.png" />
+    <Resource Include="Resources\AppIcons\Hulu.png" />
+    <Resource Include="Resources\AppIcons\ICQ.png" />
+    <Resource Include="Resources\AppIcons\IGN.png" />
+    <Resource Include="Resources\AppIcons\ImageFolder.png" />
+    <Resource Include="Resources\AppIcons\IMDb.png" />
+    <Resource Include="Resources\AppIcons\imgur.png" />
+    <Resource Include="Resources\AppIcons\IrFranView.png" />
+    <Resource Include="Resources\AppIcons\Iris.png" />
+    <Resource Include="Resources\AppIcons\iTunes.png" />
+    <Resource Include="Resources\AppIcons\Joomla.png" />
+    <Resource Include="Resources\AppIcons\Keyboard.png" />
+    <Resource Include="Resources\AppIcons\KhanAcademy.png" />
+    <Resource Include="Resources\AppIcons\KickassTorrent.png" />
+    <Resource Include="Resources\AppIcons\Kickstarter.png" />
+    <Resource Include="Resources\AppIcons\KnowYourMeme.png" />
+    <Resource Include="Resources\AppIcons\Kodi.png" />
+    <Resource Include="Resources\AppIcons\Lastfm.png" />
+    <Resource Include="Resources\AppIcons\LED.png" />
+    <Resource Include="Resources\AppIcons\LifeHacker.png" />
+    <Resource Include="Resources\AppIcons\LINE.png" />
+    <Resource Include="Resources\AppIcons\LinkedIn.png" />
+    <Resource Include="Resources\AppIcons\Linux.png" />
+    <Resource Include="Resources\AppIcons\Loominarty.png" />
+    <Resource Include="Resources\AppIcons\MailRu.png" />
+    <Resource Include="Resources\AppIcons\Malwarebytes.png" />
+    <Resource Include="Resources\AppIcons\Maps.png" />
+    <Resource Include="Resources\AppIcons\Maxthon.png" />
+    <Resource Include="Resources\AppIcons\Mediafire.png" />
+    <Resource Include="Resources\AppIcons\Medium.png" />
+    <Resource Include="Resources\AppIcons\Meetup.png" />
+    <Resource Include="Resources\AppIcons\Mega.png" />
+    <Resource Include="Resources\AppIcons\MetaCritic.png" />
+    <Resource Include="Resources\AppIcons\Microsoft_Azure.png" />
+    <Resource Include="Resources\AppIcons\Mudfish.png" />
+    <Resource Include="Resources\AppIcons\Musecore.png" />
+    <Resource Include="Resources\AppIcons\MyAnimeList.png" />
+    <Resource Include="Resources\AppIcons\Napster.png" />
+    <Resource Include="Resources\AppIcons\NationalGeographic.png" />
+    <Resource Include="Resources\AppIcons\NeteaseMusic.png" />
+    <Resource Include="Resources\AppIcons\Netflix.png" />
+    <Resource Include="Resources\AppIcons\Newegg.png" />
+    <Resource Include="Resources\AppIcons\NewGrounds.png" />
+    <Resource Include="Resources\AppIcons\NewOpenstack.png" />
+    <Resource Include="Resources\AppIcons\News.png" />
+    <Resource Include="Resources\AppIcons\NicoVideo.png" />
+    <Resource Include="Resources\AppIcons\Nut.png" />
+    <Resource Include="Resources\AppIcons\OBS.png" />
+    <Resource Include="Resources\AppIcons\Office.png" />
+    <Resource Include="Resources\AppIcons\Onenote.png" />
+    <Resource Include="Resources\AppIcons\OpenID.png" />
+    <Resource Include="Resources\AppIcons\OpenOffice.png" />
+    <Resource Include="Resources\AppIcons\OpenStack.png" />
+    <Resource Include="Resources\AppIcons\Opera.png" />
+    <Resource Include="Resources\AppIcons\Outlook.png" />
+    <Resource Include="Resources\AppIcons\Paint.png" />
+    <Resource Include="Resources\AppIcons\Pandora.png" />
+    <Resource Include="Resources\AppIcons\Pateron.png" />
+    <Resource Include="Resources\AppIcons\PayPal.png" />
+    <Resource Include="Resources\AppIcons\PCMR.png" />
+    <Resource Include="Resources\AppIcons\PCPartPicker.png" />
+    <Resource Include="Resources\AppIcons\Periscope.png" />
+    <Resource Include="Resources\AppIcons\Phoenix.png" />
+    <Resource Include="Resources\AppIcons\pi.png" />
+    <Resource Include="Resources\AppIcons\Picasa.png" />
+    <Resource Include="Resources\AppIcons\Pillar.png" />
+    <Resource Include="Resources\AppIcons\Pinterest.png" />
+    <Resource Include="Resources\AppIcons\PirateBay.png" />
+    <Resource Include="Resources\AppIcons\pixiv.png" />
+    <Resource Include="Resources\AppIcons\Plane.png" />
+    <Resource Include="Resources\AppIcons\Plex.png" />
+    <Resource Include="Resources\AppIcons\Pocket.png" />
+    <Resource Include="Resources\AppIcons\Polymer.png" />
+    <Resource Include="Resources\AppIcons\PopcornTime.png" />
+    <Resource Include="Resources\AppIcons\Pot.png" />
+    <Resource Include="Resources\AppIcons\Powerpoint.png" />
+    <Resource Include="Resources\AppIcons\Prezi.png" />
+    <Resource Include="Resources\AppIcons\Project.png" />
+    <Resource Include="Resources\AppIcons\ProsonalFolder.png" />
+    <Resource Include="Resources\AppIcons\Protonmail.png" />
+    <Resource Include="Resources\AppIcons\Publisher.png" />
+    <Resource Include="Resources\AppIcons\Qbittorrent.png" />
+    <Resource Include="Resources\AppIcons\QQ.png" />
+    <Resource Include="Resources\AppIcons\QQMusic.png" />
+    <Resource Include="Resources\AppIcons\QuickTime.png" />
+    <Resource Include="Resources\AppIcons\Radio.png" />
+    <Resource Include="Resources\AppIcons\RaspberryPi.png" />
+    <Resource Include="Resources\AppIcons\Rdio.png" />
+    <Resource Include="Resources\AppIcons\Recorder.png" />
+    <Resource Include="Resources\AppIcons\Reddit.png" />
+    <Resource Include="Resources\AppIcons\Renren.png" />
+    <Resource Include="Resources\AppIcons\Rhapsody.png" />
+    <Resource Include="Resources\AppIcons\Rocket.png" />
+    <Resource Include="Resources\AppIcons\RoosterTeeth.png" />
+    <Resource Include="Resources\AppIcons\RottenTomato.png" />
+    <Resource Include="Resources\AppIcons\RSS.png" />
+    <Resource Include="Resources\AppIcons\Satellite.png" />
+    <Resource Include="Resources\AppIcons\Server.png" />
+    <Resource Include="Resources\AppIcons\Sharepoint.png" />
+    <Resource Include="Resources\AppIcons\ShareX.png" />
+    <Resource Include="Resources\AppIcons\Shield.png" />
+    <Resource Include="Resources\AppIcons\Shuttle.png" />
+    <Resource Include="Resources\AppIcons\Skype.png" />
+    <Resource Include="Resources\AppIcons\Slack.png" />
+    <Resource Include="Resources\AppIcons\SlackerRadio.png" />
+    <Resource Include="Resources\AppIcons\SMBC.png" />
+    <Resource Include="Resources\AppIcons\SoftEtherVPN.png" />
+    <Resource Include="Resources\AppIcons\Soundcloud.png" />
+    <Resource Include="Resources\AppIcons\Sourceforge.png" />
+    <Resource Include="Resources\AppIcons\Speedfan.png" />
+    <Resource Include="Resources\AppIcons\Spek.png" />
+    <Resource Include="Resources\AppIcons\Spotify.png" />
+    <Resource Include="Resources\AppIcons\Squarespace.png" />
+    <Resource Include="Resources\AppIcons\StackExchange.png" />
+    <Resource Include="Resources\AppIcons\Stackoverflow.png" />
+    <Resource Include="Resources\AppIcons\Star.png" />
+    <Resource Include="Resources\AppIcons\StarredFolder.png" />
+    <Resource Include="Resources\AppIcons\Stumbleupon.png" />
+    <Resource Include="Resources\AppIcons\SVG.png" />
+    <Resource Include="Resources\AppIcons\Sway.png" />
+    <Resource Include="Resources\AppIcons\Swords.png" />
+    <Resource Include="Resources\AppIcons\Teamspeak.png" />
+    <Resource Include="Resources\AppIcons\TeamView.png" />
+    <Resource Include="Resources\AppIcons\TedTalks.png" />
+    <Resource Include="Resources\AppIcons\TencentWeibo.png" />
+    <Resource Include="Resources\AppIcons\TheOnion.png" />
+    <Resource Include="Resources\AppIcons\Thunderbird.png" />
+    <Resource Include="Resources\AppIcons\Tidal.png" />
+    <Resource Include="Resources\AppIcons\Tieba.png" />
+    <Resource Include="Resources\AppIcons\Tixati.png" />
+    <Resource Include="Resources\AppIcons\Tor.png" />
+    <Resource Include="Resources\AppIcons\Trello.png" />
+    <Resource Include="Resources\AppIcons\Tudou.png" />
+    <Resource Include="Resources\AppIcons\Tumblr.png" />
+    <Resource Include="Resources\AppIcons\Tunngle.png" />
+    <Resource Include="Resources\AppIcons\TVTropes.png" />
+    <Resource Include="Resources\AppIcons\Tweetdeck.png" />
+    <Resource Include="Resources\AppIcons\Twitter.png" />
+    <Resource Include="Resources\AppIcons\Ubuntu.png" />
+    <Resource Include="Resources\AppIcons\Uncyclopedia.png" />
+    <Resource Include="Resources\AppIcons\Utorrent.png" />
+    <Resource Include="Resources\AppIcons\Vidme.png" />
+    <Resource Include="Resources\AppIcons\Vimeo.png" />
+    <Resource Include="Resources\AppIcons\Virtualbox.png" />
+    <Resource Include="Resources\AppIcons\Visio.png" />
+    <Resource Include="Resources\AppIcons\Vivaldi.png" />
+    <Resource Include="Resources\AppIcons\VK.png" />
+    <Resource Include="Resources\AppIcons\VLC.png" />
+    <Resource Include="Resources\AppIcons\VPN.png" />
+    <Resource Include="Resources\AppIcons\waifu2x.png" />
+    <Resource Include="Resources\AppIcons\WallpaperEngine.png" />
+    <Resource Include="Resources\AppIcons\WaybackMachine.png" />
+    <Resource Include="Resources\AppIcons\Webtoon.png" />
+    <Resource Include="Resources\AppIcons\Weibo.png" />
+    <Resource Include="Resources\AppIcons\WikiaFandom.png" />
+    <Resource Include="Resources\AppIcons\Wikipedia.png" />
+    <Resource Include="Resources\AppIcons\WinAMP.png" />
+    <Resource Include="Resources\AppIcons\WindowsAppStore.png" />
+    <Resource Include="Resources\AppIcons\WolframAlpha.png" />
+    <Resource Include="Resources\AppIcons\Word.png" />
+    <Resource Include="Resources\AppIcons\Wordpress.png" />
+    <Resource Include="Resources\AppIcons\xbmc.png" />
+    <Resource Include="Resources\AppIcons\xda.png" />
+    <Resource Include="Resources\AppIcons\Xing.png" />
+    <Resource Include="Resources\AppIcons\xkcd.png" />
+    <Resource Include="Resources\AppIcons\Yelp.png" />
+    <Resource Include="Resources\AppIcons\Youku.png" />
+    <Resource Include="Resources\AppIcons\YouTube.png" />
+    <Resource Include="Resources\AppIcons\Youtube_Gaming.png" />
+    <Resource Include="Resources\AppIcons\Zune.png" />
+    <Resource Include="Resources\AppIcons\_C_3DSMax.png" />
+    <Resource Include="Resources\AppIcons\_C_Ableton.png" />
+    <Resource Include="Resources\AppIcons\_C_Adobe.png" />
+    <Resource Include="Resources\AppIcons\_C_AfterEffects.png" />
+    <Resource Include="Resources\AppIcons\_C_Animate.png" />
+    <Resource Include="Resources\AppIcons\_C_ArtRage.png" />
+    <Resource Include="Resources\AppIcons\_C_AutoCAD.png" />
+    <Resource Include="Resources\AppIcons\_C_Blender.png" />
+    <Resource Include="Resources\AppIcons\_C_Celtx.png" />
+    <Resource Include="Resources\AppIcons\_C_Cinema4D.png" />
+    <Resource Include="Resources\AppIcons\_C_ClipStudioPaint.png" />
+    <Resource Include="Resources\AppIcons\_C_CorelDraw.png" />
+    <Resource Include="Resources\AppIcons\_C_CreativeCloud.png" />
+    <Resource Include="Resources\AppIcons\_C_DavinciResolve.png" />
+    <Resource Include="Resources\AppIcons\_C_DreamWeaver.png" />
+    <Resource Include="Resources\AppIcons\_C_FireAlpaca.png" />
+    <Resource Include="Resources\AppIcons\_C_Fireworks.png" />
+    <Resource Include="Resources\AppIcons\_C_Flash.png" />
+    <Resource Include="Resources\AppIcons\_C_FLStudio.png" />
+    <Resource Include="Resources\AppIcons\_C_GIMP.png" />
+    <Resource Include="Resources\AppIcons\_C_Illustrator.png" />
+    <Resource Include="Resources\AppIcons\_C_Indesign.png" />
+    <Resource Include="Resources\AppIcons\_C_Inkscape.png" />
+    <Resource Include="Resources\AppIcons\_C_Lightroom.png" />
+    <Resource Include="Resources\AppIcons\_C_MangaStudio.png" />
+    <Resource Include="Resources\AppIcons\_C_OpenCanvas.png" />
+    <Resource Include="Resources\AppIcons\_C_PaintDotNet.png" />
+    <Resource Include="Resources\AppIcons\_C_PaintToolSAI.png" />
+    <Resource Include="Resources\AppIcons\_C_Photoshop.png" />
+    <Resource Include="Resources\AppIcons\_C_PhotoshopElements.png" />
+    <Resource Include="Resources\AppIcons\_C_Premiere.png" />
+    <Resource Include="Resources\AppIcons\_C_Sketchfab.png" />
+    <Resource Include="Resources\AppIcons\_C_Sketchup.png" />
+    <Resource Include="Resources\AppIcons\_C_SourceFilmMaker.png" />
+    <Resource Include="Resources\AppIcons\_C_Synthesia.png" />
+    <Resource Include="Resources\AppIcons\_C_Vegas.png" />
+    <Resource Include="Resources\AppIcons\_C_VirtualDJ.png" />
+    <Resource Include="Resources\AppIcons\_D_Atom.png" />
+    <Resource Include="Resources\AppIcons\_D_Bitbucket.png" />
+    <Resource Include="Resources\AppIcons\_D_C.png" />
+    <Resource Include="Resources\AppIcons\_D_CloudFlare.png" />
+    <Resource Include="Resources\AppIcons\_D_Codepen.png" />
+    <Resource Include="Resources\AppIcons\_D_Construct2.png" />
+    <Resource Include="Resources\AppIcons\_D_CPP.png" />
+    <Resource Include="Resources\AppIcons\_D_Cryengine.png" />
+    <Resource Include="Resources\AppIcons\_D_Csharp.png" />
+    <Resource Include="Resources\AppIcons\_D_CSS3.png" />
+    <Resource Include="Resources\AppIcons\_D_Docker.png" />
+    <Resource Include="Resources\AppIcons\_D_Drupal.png" />
+    <Resource Include="Resources\AppIcons\_D_Eclipse.png" />
+    <Resource Include="Resources\AppIcons\_D_GameMaker.png" />
+    <Resource Include="Resources\AppIcons\_D_GameMaker2.png" />
+    <Resource Include="Resources\AppIcons\_D_git.png" />
+    <Resource Include="Resources\AppIcons\_D_Github.png" />
+    <Resource Include="Resources\AppIcons\_D_Gitlab.png" />
+    <Resource Include="Resources\AppIcons\_D_GO.png" />
+    <Resource Include="Resources\AppIcons\_D_Haskell.png" />
+    <Resource Include="Resources\AppIcons\_D_HTML5.png" />
+    <Resource Include="Resources\AppIcons\_D_Java.png" />
+    <Resource Include="Resources\AppIcons\_D_JavaBean.png" />
+    <Resource Include="Resources\AppIcons\_D_Javascript.png" />
+    <Resource Include="Resources\AppIcons\_D_jQuery.png" />
+    <Resource Include="Resources\AppIcons\_D_Jsfiddle.png" />
+    <Resource Include="Resources\AppIcons\_D_Matlab.png" />
+    <Resource Include="Resources\AppIcons\_D_MaxCDN.png" />
+    <Resource Include="Resources\AppIcons\_D_MySQL.png" />
+    <Resource Include="Resources\AppIcons\_D_NetBeans.png" />
+    <Resource Include="Resources\AppIcons\_D_NotepadPP.png" />
+    <Resource Include="Resources\AppIcons\_D_npm.png" />
+    <Resource Include="Resources\AppIcons\_D_Ococat.png" />
+    <Resource Include="Resources\AppIcons\_D_Opensource.png" />
+    <Resource Include="Resources\AppIcons\_D_PHP.png" />
+    <Resource Include="Resources\AppIcons\_D_Python.png" />
+    <Resource Include="Resources\AppIcons\_D_R.png" />
+    <Resource Include="Resources\AppIcons\_D_Ruby.png" />
+    <Resource Include="Resources\AppIcons\_D_Sass.png" />
+    <Resource Include="Resources\AppIcons\_D_SublimeText.png" />
+    <Resource Include="Resources\AppIcons\_D_Swift.png" />
+    <Resource Include="Resources\AppIcons\_D_Unity.png" />
+    <Resource Include="Resources\AppIcons\_D_Unity5.png" />
+    <Resource Include="Resources\AppIcons\_D_VisualStudio.png" />
+    <Resource Include="Resources\AppIcons\_D_W3C.png" />
+    <Resource Include="Resources\AppIcons\_D_Webhook.png" />
+    <Resource Include="Resources\AppIcons\_D_Xml.png" />
+    <Resource Include="Resources\AppIcons\_G_AgeOfEmpires.png" />
+    <Resource Include="Resources\AppIcons\_G_AlanWake.png" />
+    <Resource Include="Resources\AppIcons\_G_AngryBirds.png" />
+    <Resource Include="Resources\AppIcons\_G_ArkSurvival.png" />
+    <Resource Include="Resources\AppIcons\_G_ARMA.png" />
+    <Resource Include="Resources\AppIcons\_G_ArmorGames.png" />
+    <Resource Include="Resources\AppIcons\_G_AssassinsCreed.png" />
+    <Resource Include="Resources\AppIcons\_G_Astroneer.png" />
+    <Resource Include="Resources\AppIcons\_G_Bastion.png" />
+    <Resource Include="Resources\AppIcons\_G_BattleblockTheater.png" />
+    <Resource Include="Resources\AppIcons\_G_BattleField1.png" />
+    <Resource Include="Resources\AppIcons\_G_BattleField4.png" />
+    <Resource Include="Resources\AppIcons\_G_Battlefront.png" />
+    <Resource Include="Resources\AppIcons\_G_BattlefrontAlt.png" />
+    <Resource Include="Resources\AppIcons\_G_BattleNet.png" />
+    <Resource Include="Resources\AppIcons\_G_BeamNGDrive.png" />
+    <Resource Include="Resources\AppIcons\_G_Beseige.png" />
+    <Resource Include="Resources\AppIcons\_G_BitBlaster.png" />
+    <Resource Include="Resources\AppIcons\_G_BlackOps2.png" />
+    <Resource Include="Resources\AppIcons\_G_BlackOps3.png" />
+    <Resource Include="Resources\AppIcons\_G_BloonsTowerDefense5.png" />
+    <Resource Include="Resources\AppIcons\_G_Borderlands.png" />
+    <Resource Include="Resources\AppIcons\_G_BrokenAge.png" />
+    <Resource Include="Resources\AppIcons\_G_BSNES.png" />
+    <Resource Include="Resources\AppIcons\_G_CastleCrushers.png" />
+    <Resource Include="Resources\AppIcons\_G_CitiesSkylines.png" />
+    <Resource Include="Resources\AppIcons\_G_CitiesSkylinesAlt.png" />
+    <Resource Include="Resources\AppIcons\_G_CivilizationV.png" />
+    <Resource Include="Resources\AppIcons\_G_CKAN.png" />
+    <Resource Include="Resources\AppIcons\_G_Cloud9.png" />
+    <Resource Include="Resources\AppIcons\_G_Cobalt.png" />
+    <Resource Include="Resources\AppIcons\_G_CompanyOfHeros.png" />
+    <Resource Include="Resources\AppIcons\_G_Crawl.png" />
+    <Resource Include="Resources\AppIcons\_G_CrusaderKings.png" />
+    <Resource Include="Resources\AppIcons\_G_Crysis.png" />
+    <Resource Include="Resources\AppIcons\_G_CSGO.png" />
+    <Resource Include="Resources\AppIcons\_G_Curse.png" />
+    <Resource Include="Resources\AppIcons\_G_DarkSouls.png" />
+    <Resource Include="Resources\AppIcons\_G_DayZ.png" />
+    <Resource Include="Resources\AppIcons\_G_Destiny.png" />
+    <Resource Include="Resources\AppIcons\_G_DeusEx.png" />
+    <Resource Include="Resources\AppIcons\_G_Diablo3.png" />
+    <Resource Include="Resources\AppIcons\_G_Dirt.png" />
+    <Resource Include="Resources\AppIcons\_G_Dishonored.png" />
+    <Resource Include="Resources\AppIcons\_G_DolphinEmulator.png" />
+    <Resource Include="Resources\AppIcons\_G_DontStarve.png" />
+    <Resource Include="Resources\AppIcons\_G_Doom.png" />
+    <Resource Include="Resources\AppIcons\_G_Dota2.png" />
+    <Resource Include="Resources\AppIcons\_G_DuckGame.png" />
+    <Resource Include="Resources\AppIcons\_G_Duelyst.png" />
+    <Resource Include="Resources\AppIcons\_G_DungeonOfTheEndless.png" />
+    <Resource Include="Resources\AppIcons\_G_DwarfFortress.png" />
+    <Resource Include="Resources\AppIcons\_G_ElderScrollsOnline.png" />
+    <Resource Include="Resources\AppIcons\_G_EliteDangerous.png" />
+    <Resource Include="Resources\AppIcons\_G_EndlessLegend.png" />
+    <Resource Include="Resources\AppIcons\_G_EndlessSky.png" />
+    <Resource Include="Resources\AppIcons\_G_EnterTheGungeon.png" />
+    <Resource Include="Resources\AppIcons\_G_EpicBattleFantasy.png" />
+    <Resource Include="Resources\AppIcons\_G_EpicGameLauncher.png" />
+    <Resource Include="Resources\AppIcons\_G_ESEA.png" />
+    <Resource Include="Resources\AppIcons\_G_EuropaUniversalis.png" />
+    <Resource Include="Resources\AppIcons\_G_EVE.png" />
+    <Resource Include="Resources\AppIcons\_G_Fable.png" />
+    <Resource Include="Resources\AppIcons\_G_Factorio.png" />
+    <Resource Include="Resources\AppIcons\_G_Fallout.png" />
+    <Resource Include="Resources\AppIcons\_G_Farcry4.png" />
+    <Resource Include="Resources\AppIcons\_G_FarmingSimulator17.png" />
+    <Resource Include="Resources\AppIcons\_G_FEZ.png" />
+    <Resource Include="Resources\AppIcons\_G_FFXIV.png" />
+    <Resource Include="Resources\AppIcons\_G_FireWatch.png" />
+    <Resource Include="Resources\AppIcons\_G_ForHonor.png" />
+    <Resource Include="Resources\AppIcons\_G_FTL.png" />
+    <Resource Include="Resources\AppIcons\_G_FTLAlt.png" />
+    <Resource Include="Resources\AppIcons\_G_Gameboy.png" />
+    <Resource Include="Resources\AppIcons\_G_Garena.png" />
+    <Resource Include="Resources\AppIcons\_G_GhostReconWildlands.png" />
+    <Resource Include="Resources\AppIcons\_G_Gmod.png" />
+    <Resource Include="Resources\AppIcons\_G_GOG.png" />
+    <Resource Include="Resources\AppIcons\_G_GranblueFantasy.png" />
+    <Resource Include="Resources\AppIcons\_G_GranblueFantasyAlt.png" />
+    <Resource Include="Resources\AppIcons\_G_GTA.png" />
+    <Resource Include="Resources\AppIcons\_G_GTAV.png" />
+    <Resource Include="Resources\AppIcons\_G_GuildWars2.png" />
+    <Resource Include="Resources\AppIcons\_G_H1Z1.png" />
+    <Resource Include="Resources\AppIcons\_G_HalfLife.png" />
+    <Resource Include="Resources\AppIcons\_G_Halo.png" />
+    <Resource Include="Resources\AppIcons\_G_Hawken.png" />
+    <Resource Include="Resources\AppIcons\_G_Hearthstone.png" />
+    <Resource Include="Resources\AppIcons\_G_Helldivers.png" />
+    <Resource Include="Resources\AppIcons\_G_HerosOfTheStorm.png" />
+    <Resource Include="Resources\AppIcons\_G_Hitman.png" />
+    <Resource Include="Resources\AppIcons\_G_Homeword.png" />
+    <Resource Include="Resources\AppIcons\_G_HotlineMiami.png" />
+    <Resource Include="Resources\AppIcons\_G_HumbleBundle.png" />
+    <Resource Include="Resources\AppIcons\_G_HyperLightDrifter.png" />
+    <Resource Include="Resources\AppIcons\_G_Indiegala.png" />
+    <Resource Include="Resources\AppIcons\_G_Inside.png" />
+    <Resource Include="Resources\AppIcons\_G_InvisibleInc.png" />
+    <Resource Include="Resources\AppIcons\_G_JustCause3.png" />
+    <Resource Include="Resources\AppIcons\_G_KantaiCollection.png" />
+    <Resource Include="Resources\AppIcons\_G_KingdomRush.png" />
+    <Resource Include="Resources\AppIcons\_G_Kongregate.png" />
+    <Resource Include="Resources\AppIcons\_G_KSP.png" />
+    <Resource Include="Resources\AppIcons\_G_KSPAlt.png" />
+    <Resource Include="Resources\AppIcons\_G_L4D.png" />
+    <Resource Include="Resources\AppIcons\_G_LifeIsStrange.png" />
+    <Resource Include="Resources\AppIcons\_G_Limbo.png" />
+    <Resource Include="Resources\AppIcons\_G_LOL.png" />
+    <Resource Include="Resources\AppIcons\_G_Machinarium.png" />
+    <Resource Include="Resources\AppIcons\_G_Magic.png" />
+    <Resource Include="Resources\AppIcons\_G_MapleStory.png" />
+    <Resource Include="Resources\AppIcons\_G_MarkOfTheNinja.png" />
+    <Resource Include="Resources\AppIcons\_G_MassEffect.png" />
+    <Resource Include="Resources\AppIcons\_G_MassEffectAlt.png" />
+    <Resource Include="Resources\AppIcons\_G_MGS.png" />
+    <Resource Include="Resources\AppIcons\_G_Minecraft.png" />
+    <Resource Include="Resources\AppIcons\_G_MinecraftAlt.png" />
+    <Resource Include="Resources\AppIcons\_G_MirrorsEdge.png" />
+    <Resource Include="Resources\AppIcons\_G_ModernWarfare.png" />
+    <Resource Include="Resources\AppIcons\_G_Morrowind.png" />
+    <Resource Include="Resources\AppIcons\_G_Neptunia.png" />
+    <Resource Include="Resources\AppIcons\_G_NexusModMan.png" />
+    <Resource Include="Resources\AppIcons\_G_NFS.png" />
+    <Resource Include="Resources\AppIcons\_G_NieR.png" />
+    <Resource Include="Resources\AppIcons\_G_NuclearThrone.png" />
+    <Resource Include="Resources\AppIcons\_G_Oblivion.png" />
+    <Resource Include="Resources\AppIcons\_G_OriAndTheBlindForest.png" />
+    <Resource Include="Resources\AppIcons\_G_Origin.png" />
+    <Resource Include="Resources\AppIcons\_G_osuGame.png" />
+    <Resource Include="Resources\AppIcons\_G_Overwatch.png" />
+    <Resource Include="Resources\AppIcons\_G_Overwolf.png" />
+    <Resource Include="Resources\AppIcons\_G_Paladins.png" />
+    <Resource Include="Resources\AppIcons\_G_PapersPlease.png" />
+    <Resource Include="Resources\AppIcons\_G_Payday2.png" />
+    <Resource Include="Resources\AppIcons\_G_PlagueInc.png" />
+    <Resource Include="Resources\AppIcons\_G_PlanetCoaster.png" />
+    <Resource Include="Resources\AppIcons\_G_PlanetSide2.png" />
+    <Resource Include="Resources\AppIcons\_G_PlantsVSZombies.png" />
+    <Resource Include="Resources\AppIcons\_G_Playstation.png" />
+    <Resource Include="Resources\AppIcons\_G_Portal.png" />
+    <Resource Include="Resources\AppIcons\_G_Portal2.png" />
+    <Resource Include="Resources\AppIcons\_G_ProgressQuest.png" />
+    <Resource Include="Resources\AppIcons\_G_ProjectCars.png" />
+    <Resource Include="Resources\AppIcons\_G_PUBG.png" />
+    <Resource Include="Resources\AppIcons\_G_Quake.png" />
+    <Resource Include="Resources\AppIcons\_G_RainbowSix.png" />
+    <Resource Include="Resources\AppIcons\_G_Rimworld.png" />
+    <Resource Include="Resources\AppIcons\_G_RiskOfRain.png" />
+    <Resource Include="Resources\AppIcons\_G_RocketLeague.png" />
+    <Resource Include="Resources\AppIcons\_G_RuneScape.png" />
+    <Resource Include="Resources\AppIcons\_G_Rust.png" />
+    <Resource Include="Resources\AppIcons\_G_SanrenKagura.png" />
+    <Resource Include="Resources\AppIcons\_G_ShellShockLive.png" />
+    <Resource Include="Resources\AppIcons\_G_Skyrim.png" />
+    <Resource Include="Resources\AppIcons\_G_Smite.png" />
+    <Resource Include="Resources\AppIcons\_G_SpaceEngine.png" />
+    <Resource Include="Resources\AppIcons\_G_SpaceEngineers.png" />
+    <Resource Include="Resources\AppIcons\_G_Speedrunners.png" />
+    <Resource Include="Resources\AppIcons\_G_Spore.png" />
+    <Resource Include="Resources\AppIcons\_G_StanleyParable.png" />
+    <Resource Include="Resources\AppIcons\_G_Starbound.png" />
+    <Resource Include="Resources\AppIcons\_G_StarCitizen.png" />
+    <Resource Include="Resources\AppIcons\_G_StarCraft2.png" />
+    <Resource Include="Resources\AppIcons\_G_StardewValley.png" />
+    <Resource Include="Resources\AppIcons\_G_StardewValleyAlt.png" />
+    <Resource Include="Resources\AppIcons\_G_StarTrekOnline.png" />
+    <Resource Include="Resources\AppIcons\_G_Steam.png" />
+    <Resource Include="Resources\AppIcons\_G_Stellaris.png" />
+    <Resource Include="Resources\AppIcons\_G_SubNautica.png" />
+    <Resource Include="Resources\AppIcons\_G_SuperMeatBoy.png" />
+    <Resource Include="Resources\AppIcons\_G_SurvivingMars.png" />
+    <Resource Include="Resources\AppIcons\_G_TabletopSimulator.png" />
+    <Resource Include="Resources\AppIcons\_G_TeamFortress2.png" />
+    <Resource Include="Resources\AppIcons\_G_Tera.png" />
+    <Resource Include="Resources\AppIcons\_G_Terraria.png" />
+    <Resource Include="Resources\AppIcons\_G_TheBindingOfIsaac.png" />
+    <Resource Include="Resources\AppIcons\_G_TheCulling.png" />
+    <Resource Include="Resources\AppIcons\_G_TheDivision.png" />
+    <Resource Include="Resources\AppIcons\_G_TheEscapists.png" />
+    <Resource Include="Resources\AppIcons\_G_TheSims.png" />
+    <Resource Include="Resources\AppIcons\_G_ThisWarOfMine.png" />
+    <Resource Include="Resources\AppIcons\_G_TitanFall.png" />
+    <Resource Include="Resources\AppIcons\_G_TombRaider.png" />
+    <Resource Include="Resources\AppIcons\_G_Touhou.png" />
+    <Resource Include="Resources\AppIcons\_G_TouhouAlt.png" />
+    <Resource Include="Resources\AppIcons\_G_TrackMania.png" />
+    <Resource Include="Resources\AppIcons\_G_Transistor.png" />
+    <Resource Include="Resources\AppIcons\_G_Tropico.png" />
+    <Resource Include="Resources\AppIcons\_G_Trove.png" />
+    <Resource Include="Resources\AppIcons\_G_Twitch.png" />
+    <Resource Include="Resources\AppIcons\_G_UEBS.png" />
+    <Resource Include="Resources\AppIcons\_G_Undertale.png" />
+    <Resource Include="Resources\AppIcons\_G_UniverseSandbox.png" />
+    <Resource Include="Resources\AppIcons\_G_Unreal.png" />
+    <Resource Include="Resources\AppIcons\_G_Unturned.png" />
+    <Resource Include="Resources\AppIcons\_G_Uplay.png" />
+    <Resource Include="Resources\AppIcons\_G_Warframe.png" />
+    <Resource Include="Resources\AppIcons\_G_WarThunder.png" />
+    <Resource Include="Resources\AppIcons\_G_WatchDogs.png" />
+    <Resource Include="Resources\AppIcons\_G_wii.png" />
+    <Resource Include="Resources\AppIcons\_G_wiiU.png" />
+    <Resource Include="Resources\AppIcons\_G_Witcher3.png" />
+    <Resource Include="Resources\AppIcons\_G_Wizard101.png" />
+    <Resource Include="Resources\AppIcons\_G_WorldOfGoo.png" />
+    <Resource Include="Resources\AppIcons\_G_WorldOfTanks.png" />
+    <Resource Include="Resources\AppIcons\_G_WorldOfWarplanes.png" />
+    <Resource Include="Resources\AppIcons\_G_WorldOfWarships.png" />
+    <Resource Include="Resources\AppIcons\_G_Worms.png" />
+    <Resource Include="Resources\AppIcons\_G_WormsAlt.png" />
+    <Resource Include="Resources\AppIcons\_G_WOW.png" />
+    <Resource Include="Resources\AppIcons\_G_xbox.png" />
+    <Resource Include="Resources\AppIcons\_G_XCOM.png" />
+    <Resource Include="Resources\AppIcons\_G_YandereSimulator.png" />
+    <Resource Include="Resources\AppIcons\_H_Acer.png" />
+    <Resource Include="Resources\AppIcons\_H_AMD.png" />
+    <Resource Include="Resources\AppIcons\_H_Aorus.png" />
+    <Resource Include="Resources\AppIcons\_H_Asrock.png" />
+    <Resource Include="Resources\AppIcons\_H_ASUS.png" />
+    <Resource Include="Resources\AppIcons\_H_ATI.png" />
+    <Resource Include="Resources\AppIcons\_H_Corsair.png" />
+    <Resource Include="Resources\AppIcons\_H_CPUZ.png" />
+    <Resource Include="Resources\AppIcons\_H_Dell.png" />
+    <Resource Include="Resources\AppIcons\_H_EVGA.png" />
+    <Resource Include="Resources\AppIcons\_H_Gigabyte.png" />
+    <Resource Include="Resources\AppIcons\_H_GSkill.png" />
+    <Resource Include="Resources\AppIcons\_H_hp.png" />
+    <Resource Include="Resources\AppIcons\_H_HWiNFO.png" />
+    <Resource Include="Resources\AppIcons\_H_intel.png" />
+    <Resource Include="Resources\AppIcons\_H_Logitech.png" />
+    <Resource Include="Resources\AppIcons\_H_MSi.png" />
+    <Resource Include="Resources\AppIcons\_H_Nvidia.png" />
+    <Resource Include="Resources\AppIcons\_H_NZXT.png" />
+    <Resource Include="Resources\AppIcons\_H_Razer.png" />
+    <Resource Include="Resources\AppIcons\_H_Roccat.png" />
+    <Resource Include="Resources\AppIcons\_H_ROG.png" />
+    <Resource Include="Resources\AppIcons\_H_RyzenMaster.png" />
+    <Resource Include="Resources\AppIcons\_H_Wacom.png" />
+    <Resource Include="Resources\AppIcons\_H_Zotac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MenuIcons\control.png" />
+    <Resource Include="Resources\MenuIcons\drive.png" />
+    <Resource Include="Resources\MenuIcons\gfolder.png" />
+    <Resource Include="Resources\MenuIcons\navigation.png" />
+    <Resource Include="Resources\MenuIcons\recycle.png" />
+    <Resource Include="Resources\MenuIcons\search.png" />
+    <Resource Include="Resources\MenuIcons\setting.png" />
+    <Resource Include="Resources\MenuIcons\start.png" />
+    <Resource Include="Resources\MenuIcons\task.png" />
+    <Resource Include="Resources\MenuIcons\taskview.png" />
+    <Resource Include="Resources\MenuIcons\thispc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TabIcons\Arc.png" />
+    <Resource Include="Resources\TabIcons\dashboard.png" />
+    <Resource Include="Resources\MenuIcons\earth.png" />
+    <Resource Include="Resources\MenuIcons\file.png" />
+    <Resource Include="Resources\MenuIcons\folder.png" />
+    <Resource Include="Resources\TabIcons\gamepad.png" />
+    <Resource Include="Resources\TabIcons\hexagons.png" />
+    <Resource Include="Resources\MenuIcons\personal.png" />
+    <Resource Include="Resources\MenuIcons\star.png" />
+    <Resource Include="Resources\TabIcons\triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MultiMedia\Next.png" />
+    <Resource Include="Resources\MultiMedia\Pause.png" />
+    <Resource Include="Resources\MultiMedia\Play.png" />
+    <Resource Include="Resources\MultiMedia\Previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MultiMedia\Mute.png" />
+    <Resource Include="Resources\MultiMedia\Volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts">
+      <Version>10.0.22621.755</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Assets\Received.png" />
+    <Resource Include="Resources\Assets\Sent.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Runtime.WindowsRuntime.4.6.0\build\net461\System.Runtime.WindowsRuntime.targets" Condition="Exists('..\packages\System.Runtime.WindowsRuntime.4.6.0\build\net461\System.Runtime.WindowsRuntime.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Runtime.WindowsRuntime.4.6.0\build\net461\System.Runtime.WindowsRuntime.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Runtime.WindowsRuntime.4.6.0\build\net461\System.Runtime.WindowsRuntime.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Runtime.WindowsRuntime.UI.Xaml.4.6.0\build\net461\System.Runtime.WindowsRuntime.UI.Xaml.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Runtime.WindowsRuntime.UI.Xaml.4.6.0\build\net461\System.Runtime.WindowsRuntime.UI.Xaml.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Runtime.WindowsRuntime.UI.Xaml.4.6.0\build\net461\System.Runtime.WindowsRuntime.UI.Xaml.targets" Condition="Exists('..\packages\System.Runtime.WindowsRuntime.UI.Xaml.4.6.0\build\net461\System.Runtime.WindowsRuntime.UI.Xaml.targets')" />
+</Project>

@@ -1,0 +1,178 @@
+﻿<Window x:Class="Spektrix.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Spektrix" xmlns:components="clr-namespace:Spektrix.Components" xmlns:widgets="clr-namespace:Spektrix.Widgets"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowState="Normal"
+        WindowStartupLocation="Manual" Top="0" Left="0"
+        AllowsTransparency="True"
+        Topmost="True"
+        Loaded="Uninitialize"
+        ShowInTaskbar="False"
+        Title="MainWindow" 
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}"
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}">
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="exit_background" Background="Transparent"
+              MouseDown="Uninitialize"
+              Grid.Row="0" Grid.RowSpan="20"
+              Grid.Column="0" Grid.ColumnSpan="21"/>
+
+        <Grid Grid.Row="1" Grid.RowSpan="2"
+              Grid.Column="7" Grid.ColumnSpan="7">
+            <components:DateTimeDisplay x:Name="main_display_clock" />
+        </Grid>
+
+        <Grid x:Name="startup_bar" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="17">
+            <Rectangle Fill="Red" MouseEnter="Initialize" Margin="0,0,0,0"  Height="1"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="19">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <components:TabBar x:Name="main_tab_bar" 
+                                Grid.Row="1" Grid.RowSpan="2"/>
+        </Grid>
+
+
+        <Grid x:Name="exit" MouseDown="Exit"  Grid.Row="2" Grid.Column="20" Background="Gray"/>
+
+        <components:Group x:Name="main_group" 
+                             Grid.Row="6" Grid.RowSpan="8"
+                             Grid.Column="1" Grid.ColumnSpan="19"/>
+
+        <Grid x:Name="menu_widget_hub" Grid.Row="14" Grid.RowSpan="5" Grid.Column="1" Grid.ColumnSpan="19">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Rectangle x:Name="bottom_bar" Fill="White" 
+                       Width="{Binding ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type FrameworkElement}}}"
+                       HorizontalAlignment="Left"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.RowSpan="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <widgets:MultiMedia x:Name="main_multimedia"  Grid.Row="1" Grid.RowSpan="9" Grid.Column="0" Grid.ColumnSpan="4" />
+                <widgets:Calandar x:Name="main_calandar" Grid.Row="1" Grid.RowSpan="9" Grid.Column="4" Grid.ColumnSpan="4" />
+                <widgets:CpuRamMonitor x:Name="main_cpu_ram_monitor" Grid.Row="1" Grid.RowSpan="4" Grid.Column="8" Grid.ColumnSpan="4"/>
+                <widgets:DiskMonitor x:Name="main_disk_monitor" Grid.Row="6" Grid.RowSpan="4" Grid.Column="8" Grid.ColumnSpan="4" />
+                <widgets:NetworkMonitor x:Name="main_network_monitor" Grid.Row="1" Grid.RowSpan="9" Grid.Column="12" Grid.ColumnSpan="4" Margin="10"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

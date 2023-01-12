@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Spektrix.Components.Group"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spektrix.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="{x:Static SystemParameters.PrimaryScreenHeight}"
+             d:DesignWidth="{x:Static SystemParameters.PrimaryScreenWidth}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <local:Launcher x:Name="launcher_0" Grid.Column="0"
+                               Height="{Binding ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type FrameworkElement}}}"
+                               VerticalAlignment="Top"
+                               Margin="0,0,2,0" />
+        <local:Launcher x:Name="launcher_1" Grid.Column="1" 
+                               Height="{Binding ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type FrameworkElement}}}"
+                               VerticalAlignment="Top"
+                               Margin="2,0,2,0" />
+        <local:Launcher x:Name="launcher_2" Grid.Column="2"
+                               Height="{Binding ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type FrameworkElement}}}"
+                               VerticalAlignment="Top"
+                               Margin="2,0,2,0" />
+        <local:Launcher x:Name="launcher_3" Grid.Column="3" 
+                               Height="{Binding ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type FrameworkElement}}}"
+                               VerticalAlignment="Top"
+                               Margin="2,0,2,0" />
+        <local:Launcher x:Name="launcher_4" Grid.Column="4" 
+                               Height="{Binding ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type FrameworkElement}}}"
+                               VerticalAlignment="Top"
+                               Margin="2,0,2,0" />
+        <local:Launcher x:Name="launcher_5" Grid.Column="5" 
+                               Height="{Binding ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type FrameworkElement}}}"
+                               VerticalAlignment="Top"
+                               Margin="2,0,0,0" />
+    </Grid>
+</UserControl>
