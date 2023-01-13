@@ -28,6 +28,7 @@ This work is licensed under a
  - [x] Multimedia Control
  - [x] Digital clock with date and time
  - [ ] Weather Forcast
+ - [ ] National Weather Service Alerts
  - [x] Calander
  - [ ] Audio visualizer
  - [x] Disk Usage Monitor
