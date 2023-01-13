@@ -20,6 +20,7 @@ C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\MainWindow.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\DiskMonitor.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\MultiMedia.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\NetworkMonitor.g.cs
+C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\SoundControl.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\App.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Spektrix_MarkupCompile.cache
@@ -36,6 +37,7 @@ C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\MainWindow.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\DiskMonitor.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\MultiMedia.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\NetworkMonitor.baml
+C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\SoundControl.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Spektrix.g.resources
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Spektrix.Properties.Resources.resources
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Spektrix.csproj.GenerateResource.cache

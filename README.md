@@ -25,14 +25,14 @@ This work is licensed under a
  - [x] WPF application
  - [x] Support for proportional resizing
  - [x] 24 Application Launchers
- - [ ] Multimedia Control
+ - [x] Multimedia Control
  - [x] Digital clock with date and time
  - [ ] Weather Forcast
  - [x] Calander
  - [ ] Audio visualizer
  - [x] Disk Usage Monitor
  - [x] CPU-RAM Usage Monitor
- - [ ] Network Usage Monitor
+ - [x] Network Usage Monitor
  - [ ] GPU Usage Monitor
 
 ## Notes

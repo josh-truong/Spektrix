@@ -117,6 +117,9 @@
     <Compile Include="Widgets\NetworkMonitor.xaml.cs">
       <DependentUpon>NetworkMonitor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Widgets\SoundControl.xaml.cs">
+      <DependentUpon>SoundControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="Components\Launcher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Widgets\NetworkMonitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\SoundControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1300,7 +1307,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\MultiMedia\Mute.png" />
-    <Resource Include="Resources\MultiMedia\Volume.png" />
+    <Resource Include="Resources\MultiMedia\Unmute.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -1323,7 +1330,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\MultiMedia\Music.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Assets\Received.png" />
     <Resource Include="Resources\Assets\Sent.png" />

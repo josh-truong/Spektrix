@@ -12,7 +12,7 @@
                 BorderBrush="AntiqueWhite"
                 BorderThickness="3"
                 CornerRadius="10">
-            <Grid Margin="1,5,1,5">
+            <Grid Margin="1,10,1,10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -21,8 +21,17 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    
-                    <Grid Grid.Row="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Row="0" Grid.ColumnSpan="6">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition />
@@ -30,23 +39,40 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <Viewbox Grid.Column="0">
-                            <Image x:Name="previous" MouseDown="Previous" />
-                        </Viewbox>
+                        <Border x:Name="previous_container" Grid.Column="0" CornerRadius="10">
+                            <Viewbox>
+                                <Image x:Name="previous" MouseDown="Previous" />
+                            </Viewbox>
+                        </Border>
 
-                        <Viewbox Grid.Column="1">
-                            <Image x:Name="play_pause" MouseDown="PlayPause" />
-                        </Viewbox>
-                        <Viewbox Grid.Column="2">
-                            <Image x:Name="next" MouseDown="Next" />
-                        </Viewbox>
-                        <Viewbox Grid.Column="3">
-                            <Image x:Name="volume_mute" MouseDown="VolumeMute" />
-                        </Viewbox>
+                        <Border x:Name="play_pause_container" Grid.Column="1" CornerRadius="10">
+                            <Viewbox>
+                                <Image x:Name="play_pause" MouseDown="PlayPause" />
+                            </Viewbox>
+                        </Border>
+
+                        <Border x:Name="next_container" Grid.Column="2" CornerRadius="10">
+                            <Viewbox>
+                                <Image x:Name="next" MouseDown="Next" />
+                            </Viewbox>
+                        </Border>
+
+                        <Border x:Name="volume_mute_container" Grid.Column="3" CornerRadius="10" Margin="4">
+                            <Viewbox>
+                                <Image x:Name="volume_mute" MouseDown="VolumeMute" />
+                            </Viewbox>
+                        </Border>
                     </Grid>
 
-                    <Grid Grid.Row="1" Grid.RowSpan="3">
+                    <Grid Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="6">
                         <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+
                             <RowDefinition />
                             <RowDefinition />
                             <RowDefinition />
@@ -62,17 +88,19 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="songTitle" Foreground="White" Margin="0,0,10,0"
-                                   Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3"
-                                   VerticalAlignment="Center" HorizontalAlignment="Right" />
-                        <TextBlock x:Name="songAuthor" Foreground="White" Margin="0,0,10,0"
-                                   Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"
-                                   VerticalAlignment="Center" HorizontalAlignment="Right"/>
-
-                        <Viewbox Grid.Row="1" Grid.RowSpan="5"
-                                 Grid.Column="0" Grid.ColumnSpan="2">
-                            <Image x:Name="songImage" HorizontalAlignment="Left" />
+                        <TextBlock x:Name="songTitle" Foreground="White" Margin="10,0,10,0" TextTrimming="CharacterEllipsis"
+                                   Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Left" />
+                        <TextBlock x:Name="songAuthor" Foreground="White" Margin="0,0,10,0" TextTrimming="CharacterEllipsis"
+                                   Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Right"/>
+                        <Viewbox Grid.Row="2" Grid.RowSpan="10" Margin="0,0,0,0"
+                                 Grid.Column="0" Grid.ColumnSpan="3"
+                                 HorizontalAlignment="Left" >
+                            <Image x:Name="songImage" Stretch="UniformToFill" />
                         </Viewbox>
+                    </Grid>
+
+                    <Grid Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3">
+                        <StackPanel x:Name="media_session_menu" Orientation="Horizontal" HorizontalAlignment="Center" />
                     </Grid>
                 </Grid>
             </Grid>

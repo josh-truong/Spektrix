@@ -1,10 +1,13 @@
 ﻿using Spektrix.Code;
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Windows.Media.Control;
 using Windows.Storage.Streams;
 using static Spektrix.Code.MediaManager;
 using Color = System.Windows.Media.Color;
@@ -25,6 +28,8 @@ namespace Spektrix.Widgets
         private const int APPCOMMAND_VOLUME_MUTE = 0x80000;
 
         private static readonly MediaManager mediaManager = new MediaManager();
+        private MediaSession previousSession = null;
+        static readonly object _writeLock = new object();
 
 
         [DllImport("user32.dll")]
@@ -34,6 +39,7 @@ namespace Spektrix.Widgets
         {
             InitializeComponent();
             Setup();
+            MouseEvent();
         }
 
         // Setup sets the information to be displayed
@@ -43,37 +49,174 @@ namespace Spektrix.Widgets
             this.previous.Source = new BitmapImage(new Uri(MultiMediaResourceUrl + "Previous.png"));
             this.play_pause.Source = new BitmapImage(new Uri(MultiMediaResourceUrl + "Play.png"));
             this.next.Source = new BitmapImage(new Uri(MultiMediaResourceUrl + "Next.png"));
-            this.volume_mute.Source = new BitmapImage(new Uri(MultiMediaResourceUrl + "Volume.png"));
+            this.volume_mute.Source = new BitmapImage(new Uri(MultiMediaResourceUrl + "Mute.png"));
 
             this.songTitle.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
             this.songAuthor.FontSize = SystemParameters.PrimaryScreenHeight * 0.010;
 
-            mediaManager.OnAnySessionOpened += Initialize;
-            //mediaManager.OnAnySessionOpened += MediaManager_OnAnySessionOpened;
-            //mediaManager.OnAnySessionClosed += MediaManager_OnAnySessionClosed;
-            //mediaManager.OnFocusedSessionChanged += MediaManager_OnFocusedSessionChanged;
+            // Subscribe to event handlers to WindowsMediaController
+            mediaManager.OnAnySessionOpened += MediaManager_OnAnySessionOpened;
+            mediaManager.OnAnySessionClosed += MediaManager_OnAnySessionClosed;
+            mediaManager.OnFocusedSessionChanged += MediaManager_OnFocusedSessionChanged;
+            mediaManager.OnAnyPlaybackStateChanged += MediaManager_OnAnyPlaybackStateChanged;
+            mediaManager.OnAnyMediaPropertyChanged += MediaManager_OnAnyMediaPropertyChanged;
+
             mediaManager.Start();
         }
 
-        // Initialize initializes the UI of the component
-        private void Initialize(MediaSession mediaSession)
+        private void MouseEvent()
         {
-            var songInfo = mediaSession.ControlSession.TryGetMediaPropertiesAsync().GetAwaiter().GetResult();
-            if (songInfo != null)
+            this.previous_container.MouseEnter += (s, e) => { this.previous_container.Background = new SolidColorBrush(Color.FromArgb(0x80, 0xFF, 0xFF, 0xFF)); };
+            this.previous_container.MouseLeave += (s, e) => { this.previous_container.Background = new SolidColorBrush(Color.FromArgb(0x00, 0x00, 0x00, 0x00)); };
+
+            this.play_pause_container.MouseEnter += (s, e) => { this.play_pause_container.Background = new SolidColorBrush(Color.FromArgb(0x80, 0xFF, 0xFF, 0xFF)); };
+            this.play_pause_container.MouseLeave += (s, e) => { this.play_pause_container.Background = new SolidColorBrush(Color.FromArgb(0x00, 0x00, 0x00, 0x00)); };
+
+            this.next_container.MouseEnter += (s, e) => { this.next_container.Background = new SolidColorBrush(Color.FromArgb(0x80, 0xFF, 0xFF, 0xFF)); };
+            this.next_container.MouseLeave += (s, e) => { this.next_container.Background = new SolidColorBrush(Color.FromArgb(0x00, 0x00, 0x00, 0x00)); };
+
+            this.volume_mute_container.MouseEnter += (s, e) => { this.volume_mute_container.Background = new SolidColorBrush(Color.FromArgb(0x80, 0xFF, 0xFF, 0xFF)); };
+            this.volume_mute_container.MouseLeave += (s, e) => { this.volume_mute_container.Background = new SolidColorBrush(Color.FromArgb(0x00, 0x00, 0x00, 0x00)); };
+
+        }
+
+        // Add media source to StackPanel
+        private void MediaManager_OnAnySessionOpened(MediaManager.MediaSession session)
+        {
+            void AddSession()
             {
-                this.songTitle.Text = songInfo.Title.ToUpper();
-                this.songAuthor.Text = songInfo.Artist;
-                this.songImage.Source = GetThumbnail(songInfo.Thumbnail);
+                try
+                {
+                    // Get media properties from current media session
+                    var songInfo = session.ControlSession.TryGetMediaPropertiesAsync().GetAwaiter().GetResult();
+                    // Get song thumbnail
+                    BitmapImage session_thumbnail;
+                    try { session_thumbnail = new BitmapImage(new Uri(MultiMediaResourceUrl + "Music.png")); }
+                    catch { session_thumbnail = null; }
+
+                    // Create a container
+                    Border container = new Border()
+                    {
+                        Tag = session.Id,
+                        BorderBrush = Brushes.White,
+                        BorderThickness = new Thickness(2),
+                        CornerRadius = new CornerRadius(10),
+                        Margin = new Thickness(5, 1, 5, 1),
+                        Child = new Viewbox()
+                        {
+                            // Create a viewbox with an image child
+                            Child = new Image
+                            {
+                                ToolTip = session.Id,
+                                Source = session_thumbnail,
+                                Visibility = Visibility.Visible
+                            }
+                        }
+                    };
+                    container.MouseEnter += (s, e) =>
+                    {
+                        container.Background = new SolidColorBrush(Color.FromArgb(0x80, 0xFF, 0xFF, 0xFF));
+                    };
+                    container.MouseLeave += (s, e) =>
+                    {
+                        container.Background = new SolidColorBrush(Color.FromArgb(0x00, 0x00, 0x00, 0x00));
+                    };
+                    container.MouseDown += (s, e) =>
+                    {
+                        Console.WriteLine($"Now playing on {session.Id}.");
+                    };
+
+                    // Add to stackpanel
+                    this.media_session_menu.Children.Add(container);
+                    // Update stackpanel layout
+                    this.media_session_menu.UpdateLayout();
+                }
+                catch { }
+            }
+            
+            WriteLineColor("-- New Source: " + session.Id, ConsoleColor.Green);
+            Application.Current.Dispatcher.Invoke(AddSession);
+        }
+
+        // Remove media source to StackPanel
+        private void MediaManager_OnAnySessionClosed(MediaManager.MediaSession session)
+        {
+            WriteLineColor("-- Removed Source: " + session.Id, ConsoleColor.Red);
+            void RemoveSession()
+            {
+                try 
+                {
+                    Border container = GetContainer(session);
+                    if (container == null) return;
+
+                    // Remove viewbox from stackpanel
+                    this.media_session_menu.Children.Remove(container);
+                    // Update stackpanel
+                    this.media_session_menu.UpdateLayout();
+                }
+                catch { }
+            }
+
+            Application.Current.Dispatcher.Invoke(RemoveSession);
+        }
+
+        private void MediaManager_OnFocusedSessionChanged(MediaManager.MediaSession mediaSession)
+        {
+            void ChangeSession()
+            {
+                try
+                {
+                    // Reset previous session background
+                    if (previousSession != null)
+                        GetContainer(previousSession).Background = new SolidColorBrush(Color.FromArgb(0x00, 0x00, 0x00, 0x00));
+
+                    // Highlight session being used
+                    Border container = GetContainer(mediaSession);
+                    if (container == null) return;
+                    container.Background = new SolidColorBrush(Color.FromArgb(0x80, 0xFF, 0xFF, 0xFF));
+
+                    // Set current to previous
+                    previousSession = mediaSession;
+                }
+                catch { }
+            }
+            WriteLineColor("== Session Focus Changed: " + mediaSession?.ControlSession?.SourceAppUserModelId, ConsoleColor.Gray);
+            Application.Current.Dispatcher.Invoke(ChangeSession);
+        }
+
+        private void MediaManager_OnAnyPlaybackStateChanged(MediaManager.MediaSession sender, GlobalSystemMediaTransportControlsSessionPlaybackInfo args)
+        {
+            void PlaybackState()
+            {
+                try
+                {
+                    if (args.PlaybackStatus.ToString() == "Playing")
+                        this.play_pause.Source = new BitmapImage(new Uri(MultiMediaResourceUrl + "Pause.png"));
+                    else if (args.PlaybackStatus.ToString() == "Paused")
+                        this.play_pause.Source = new BitmapImage(new Uri(MultiMediaResourceUrl + "Play.png"));
+                }
+                catch { }
+            }
+            WriteLineColor($"{sender.Id} is now {args.PlaybackStatus}", ConsoleColor.Yellow);
+            
+            Application.Current.Dispatcher.Invoke(PlaybackState);
+            Application.Current.Dispatcher.Invoke(() => { UpdateMediaDisplay(sender); });
+        }
+
+        private void MediaManager_OnAnyMediaPropertyChanged(MediaManager.MediaSession sender, GlobalSystemMediaTransportControlsSessionMediaProperties args)
+        {
+            WriteLineColor($"{sender.Id} is now playing {args.Title} {(String.IsNullOrEmpty(args.Artist) ? "" : $"by {args.Artist}")}", ConsoleColor.Cyan);
+            Application.Current.Dispatcher.Invoke(() => { UpdateMediaDisplay(sender); });
+        }
+
+        public static void WriteLineColor(object toprint, ConsoleColor color = ConsoleColor.White)
+        {
+            lock (_writeLock)
+            {
+                Console.ForegroundColor = color;
+                Console.WriteLine("[" + DateTime.Now.ToString("HH:mm:ss.fff") + "] " + toprint);
             }
         }
-
-        // Uninitialize uninitializes the UI of the component
-        private void Uninitialize()
-        {
-
-        }
-
-
 
         private void PlayPause(object sender, EventArgs e)
         {
@@ -124,6 +267,30 @@ namespace Spektrix.Widgets
                 image.EndInit();
             }
             return image;
+        }
+
+        private Border GetContainer(MediaManager.MediaSession session)
+        {
+            // Check if there are any children in stackpanel
+            if (this.media_session_menu.Children.Count == 0) return null;
+            // Iterate through stackpanel Children
+            foreach (Border child in this.media_session_menu.Children)
+                // Check if viewbox tag matches session id
+                if (child.Tag.ToString() == session.Id) return child;
+            return null;
+        }
+
+        void UpdateMediaDisplay(MediaManager.MediaSession session)
+        {
+            var songInfo = session.ControlSession.TryGetMediaPropertiesAsync().GetAwaiter().GetResult();
+            if (songInfo == null) return;
+
+            // Update song image, title, author
+            BitmapImage session_thumbnail = (songInfo != null) ? GetThumbnail(songInfo.Thumbnail) : null;
+
+            this.songTitle.Text = songInfo.Title.ToUpper();
+            this.songAuthor.Text = songInfo.Artist;
+            this.songImage.Source = GetThumbnail(songInfo.Thumbnail);
         }
     }
 }
