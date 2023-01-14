@@ -51,9 +51,6 @@ namespace Spektrix.Widgets
             this.next.Source = new BitmapImage(new Uri(MultiMediaResourceUrl + "Next.png"));
             this.volume_mute.Source = new BitmapImage(new Uri(MultiMediaResourceUrl + "Mute.png"));
 
-            this.songTitle.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-            this.songAuthor.FontSize = SystemParameters.PrimaryScreenHeight * 0.010;
-
             // Subscribe to event handlers to WindowsMediaController
             mediaManager.OnAnySessionOpened += MediaManager_OnAnySessionOpened;
             mediaManager.OnAnySessionClosed += MediaManager_OnAnySessionClosed;
@@ -158,6 +155,7 @@ namespace Spektrix.Widgets
             }
 
             Application.Current.Dispatcher.Invoke(RemoveSession);
+            Application.Current.Dispatcher.Invoke(() => { UpdateMediaDisplay(previousSession); });
         }
 
         private void MediaManager_OnFocusedSessionChanged(MediaManager.MediaSession mediaSession)
@@ -182,6 +180,7 @@ namespace Spektrix.Widgets
             }
             WriteLineColor("== Session Focus Changed: " + mediaSession?.ControlSession?.SourceAppUserModelId, ConsoleColor.Gray);
             Application.Current.Dispatcher.Invoke(ChangeSession);
+            Application.Current.Dispatcher.Invoke(() => { UpdateMediaDisplay(mediaSession); });
         }
 
         private void MediaManager_OnAnyPlaybackStateChanged(MediaManager.MediaSession sender, GlobalSystemMediaTransportControlsSessionPlaybackInfo args)
@@ -282,6 +281,7 @@ namespace Spektrix.Widgets
 
         void UpdateMediaDisplay(MediaManager.MediaSession session)
         {
+            if (session == null) return;
             var songInfo = session.ControlSession.TryGetMediaPropertiesAsync().GetAwaiter().GetResult();
             if (songInfo == null) return;
 

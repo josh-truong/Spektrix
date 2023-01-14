@@ -35,6 +35,7 @@ This work is licensed under a
  - [x] CPU-RAM Usage Monitor
  - [x] Network Usage Monitor
  - [ ] GPU Usage Monitor
+ - [ ] RGB to Black and White image conversion
 
 ## Notes
  - Code Directory: Contains independent classes to be used by any user controls

@@ -1,0 +1,59 @@
+﻿<Window x:Class="Spektrix.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Spektrix"
+        mc:Ignorable="d"
+        Topmost="True"
+        Title="Spektrix Settings" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ListBox Name="lb" 
+                 Grid.Row="1" Grid.RowSpan="8"
+                 Grid.Column="1" Grid.ColumnSpan="4"
+                 SelectionChanged="ItemSelection" SelectionMode="Single" />
+
+        <Border Background="Black"
+                Grid.Row="1" Grid.RowSpan="6" 
+                Grid.Column="10" Grid.ColumnSpan="4">
+            <Viewbox>
+                <Image x:Name="image_display"/>
+            </Viewbox>
+        </Border>
+        
+    </Grid>
+</Window>

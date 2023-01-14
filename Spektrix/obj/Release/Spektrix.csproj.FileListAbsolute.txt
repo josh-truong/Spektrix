@@ -20,7 +20,6 @@ C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\MainWindow.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Widgets\DiskMonitor.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Widgets\MultiMedia.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Widgets\NetworkMonitor.g.cs
-C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Widgets\SoundControl.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\App.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\GeneratedInternalTypeHelper.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Spektrix_MarkupCompile.cache
@@ -37,7 +36,6 @@ C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\MainWindow.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Widgets\DiskMonitor.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Widgets\MultiMedia.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Widgets\NetworkMonitor.baml
-C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Widgets\SoundControl.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Spektrix.g.resources
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Spektrix.Properties.Resources.resources
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Spektrix.csproj.GenerateResource.cache
@@ -45,3 +43,5 @@ C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Spektrix.csproj.Co
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Spektrix.csproj.CopyComplete
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Spektrix.exe
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\Spektrix.pdb
+C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\SettingsWindow.g.cs
+C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Release\SettingsWindow.baml

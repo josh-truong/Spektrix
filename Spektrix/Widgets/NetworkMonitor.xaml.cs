@@ -46,27 +46,6 @@ namespace Spektrix.Widgets
             bytesSent = new PerformanceCounter("Network Interface", "Bytes Sent/sec", instance);
             bytesReceived = new PerformanceCounter("Network Interface", "Bytes Received/sec", instance);
 
-            // FontSize Setup
-            this.title.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-
-            this.wifi_ipv4_col0.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-            this.wifi_ipv4_col1.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-
-            this.ethernet_ipv4_col0.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-            this.ethernet_ipv4_col1.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-
-            this.speed_col0.FontSize = SystemParameters.PrimaryScreenHeight * 0.013;
-            this.speed_col1.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-            this.speed_col2.FontSize = SystemParameters.PrimaryScreenHeight * 0.013;
-
-            this.peak_col0.FontSize = SystemParameters.PrimaryScreenHeight * 0.013;
-            this.peak_col1.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-            this.peak_col2.FontSize = SystemParameters.PrimaryScreenHeight * 0.013;
-
-            this.sum_col0.FontSize = SystemParameters.PrimaryScreenHeight * 0.013;
-            this.sum_col1.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-            this.sum_col2.FontSize = SystemParameters.PrimaryScreenHeight * 0.013;
-
             this.wifi_ipv4_col1.Visibility = Visibility.Hidden;
             this.ethernet_ipv4_col1.Visibility = Visibility.Hidden;
 

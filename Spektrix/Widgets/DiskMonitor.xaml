@@ -18,112 +18,81 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
-                <TextBlock x:Name="title" 
-                       Foreground="White"
-                       Margin="0,0,0,5"
-                       FontFamily="{StaticResource Baksheesh}"
-                       FontStyle="Normal"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       TextAlignment="Center"
-                       TextDecorations="Underline"
-                       Text="DRIVES"/>
+                <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5">
+                    <TextBlock x:Name="title" 
+                               Foreground="White"
+                               FontFamily="{StaticResource Baksheesh}"
+                               FontStyle="Normal"
+                               TextAlignment="Center"
+                               TextDecorations="Underline"
+                               Text="DRIVES"/>
+                </Viewbox>
             </Grid>
             <Grid Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock x:Name="drive0_label" 
-                               Grid.Column="1"
-                               Foreground="White"
-                               FontFamily="{StaticResource Baksheesh}"
-                               FontStyle="Normal"
-                               Margin="0,0,0,0"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               TextAlignment="Center" />
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                    
+                <Viewbox Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0">
                     <TextBlock x:Name="drive0_col0" 
-                               Margin="5,0,0,0"
-                               Grid.Column="0"
-                               Foreground="White"
-                               FontFamily="{StaticResource Baksheesh}"
-                               FontStyle="Normal"
-                               HorizontalAlignment="Left"
-                               VerticalAlignment="Center"
-                               TextAlignment="Center"
-                               Text="Free: ---"/>
+                            Foreground="White"
+                            FontFamily="{StaticResource Baksheesh}"
+                            FontStyle="Normal"
+                            TextAlignment="Center"
+                            Text="Free: ---"/>
+                </Viewbox>
+
+                <Viewbox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="7">
+                    <TextBlock x:Name="drive0_label" 
+                                Foreground="White"
+                                FontFamily="{StaticResource Baksheesh}"
+                                FontStyle="Normal"
+                                TextAlignment="Center" />
+                </Viewbox>
+
+                <Viewbox Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0">
                     <TextBlock x:Name="drive0_col1" 
-                               Margin="0,0,5,0"
-                               Grid.Column="1"
-                               Foreground="White"
-                               FontFamily="{StaticResource Baksheesh}"
-                               FontStyle="Normal"
-                               HorizontalAlignment="Right"
-                               VerticalAlignment="Center"
-                               TextAlignment="Center"
-                               Text="Total: ---"/>
+                                Foreground="White"
+                                FontFamily="{StaticResource Baksheesh}"
+                                FontStyle="Normal"
+                                TextAlignment="Center"
+                                Text="Total: ---"/>
+                </Viewbox>
                 </Grid>
-            </Grid>
             <Grid Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock x:Name="drive1_label" 
-                               Grid.Column="1"
-                               Foreground="White"
-                               FontFamily="{StaticResource Baksheesh}"
-                               FontStyle="Normal"
-                               Margin="0,0,0,0"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               TextAlignment="Center" />
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <Viewbox Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0">
                     <TextBlock x:Name="drive1_col0" 
-                               Margin="5,0,0,0"
-                               Grid.Column="0"
-                               Foreground="White"
-                               FontFamily="{StaticResource Baksheesh}"
-                               FontStyle="Normal"
-                               HorizontalAlignment="Left"
-                               VerticalAlignment="Center"
-                               TextAlignment="Center"
-                               Text="Free: ---"/>
+                                Foreground="White"
+                                FontFamily="{StaticResource Baksheesh}"
+                                FontStyle="Normal"
+                                TextAlignment="Center"
+                                Text="Free: ---"/>
+                </Viewbox>
+
+                <Viewbox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="7">
+                    <TextBlock x:Name="drive1_label" 
+                                Foreground="White"
+                                FontFamily="{StaticResource Baksheesh}"
+                                FontStyle="Normal"
+                                TextAlignment="Center" />
+                </Viewbox>
+
+                <Viewbox Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0">
                     <TextBlock x:Name="drive1_col1" 
-                               Margin="0,0,5,0"
-                               Grid.Column="1"
                                Foreground="White"
                                FontFamily="{StaticResource Baksheesh}"
                                FontStyle="Normal"
-                               HorizontalAlignment="Right"
-                               VerticalAlignment="Center"
                                TextAlignment="Center"
                                Text="Total: ---"/>
-                </Grid>
+                </Viewbox>
             </Grid>
         </Grid>
     </Border>

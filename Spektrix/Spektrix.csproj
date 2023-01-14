@@ -94,6 +94,9 @@
     <Compile Include="Code\InstalledApplication.cs" />
     <Compile Include="Code\MainApplicationBackground.cs" />
     <Compile Include="Code\WindowsMediaController.cs" />
+    <Compile Include="SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Widgets\Calandar.xaml.cs">
       <DependentUpon>Calandar.xaml</DependentUpon>
     </Compile>
@@ -117,10 +120,11 @@
     <Compile Include="Widgets\NetworkMonitor.xaml.cs">
       <DependentUpon>NetworkMonitor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\SoundControl.xaml.cs">
-      <DependentUpon>SoundControl.xaml</DependentUpon>
-    </Compile>
     <Page Include="Components\Launcher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,10 +185,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Widgets\NetworkMonitor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Widgets\SoundControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

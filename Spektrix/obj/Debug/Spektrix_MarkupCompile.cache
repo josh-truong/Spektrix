@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\App.xaml
-12-134089203
+12-1800744805
 
-20-1363242757
+201084204681
 217-1035881887
-Components\Launcher.xaml;Widgets\Calandar.xaml;Widgets\CpuRamMonitor.xaml;Widgets\DateTimeDisplay.xaml;Components\Tab.xaml;Components\TabBar.xaml;Components\Group.xaml;MainWindow.xaml;Widgets\DiskMonitor.xaml;Widgets\MultiMedia.xaml;Widgets\NetworkMonitor.xaml;Widgets\SoundControl.xaml;
+Components\Launcher.xaml;SettingsWindow.xaml;Widgets\Calandar.xaml;Widgets\CpuRamMonitor.xaml;Widgets\DateTimeDisplay.xaml;Components\Tab.xaml;Components\TabBar.xaml;Components\Group.xaml;MainWindow.xaml;Widgets\DiskMonitor.xaml;Widgets\MultiMedia.xaml;Widgets\NetworkMonitor.xaml;
 
 False
 

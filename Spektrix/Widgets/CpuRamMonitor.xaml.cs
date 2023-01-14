@@ -36,17 +36,6 @@ namespace Spektrix.Widgets
             // Setup Performance Counter for cpu/ram
             cpuCounter = new PerformanceCounter("Processor Information", "% Processor Utility", "_Total");
             ramCounter = new PerformanceCounter("Memory", "Available Bytes");
-
-            // FontSize Setup
-            this.title.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-            this.cpu_col0.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-            this.ram_col0.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-
-            this.cpu_col1.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-            this.ram_col1.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-
-            this.cpu_col2.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
-            this.ram_col2.FontSize = SystemParameters.PrimaryScreenHeight * 0.015;
         }
 
         // Update Widget

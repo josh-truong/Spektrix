@@ -75,8 +75,8 @@
               Grid.Row="0" Grid.RowSpan="20"
               Grid.Column="0" Grid.ColumnSpan="21"/>
 
-        <Grid Grid.Row="1" Grid.RowSpan="2"
-              Grid.Column="7" Grid.ColumnSpan="7">
+        <Grid Grid.Row="1" Grid.RowSpan="3"
+              Grid.Column="6" Grid.ColumnSpan="9">
             <components:DateTimeDisplay x:Name="main_display_clock" />
         </Grid>
 
@@ -97,7 +97,7 @@
         </Grid>
 
 
-        <Grid x:Name="exit" MouseDown="Exit"  Grid.Row="2" Grid.Column="20" Background="Gray"/>
+        <Grid x:Name="exit" MouseDown="Exit"  Grid.Row="10" Grid.Column="20" Background="Gray"/>
 
         <components:Group x:Name="main_group" 
                              Grid.Row="6" Grid.RowSpan="8"
@@ -167,11 +167,11 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 
-                <widgets:MultiMedia x:Name="main_multimedia"  Grid.Row="1" Grid.RowSpan="9" Grid.Column="0" Grid.ColumnSpan="4" />
-                <widgets:Calandar x:Name="main_calandar" Grid.Row="1" Grid.RowSpan="9" Grid.Column="4" Grid.ColumnSpan="4" />
-                <widgets:CpuRamMonitor x:Name="main_cpu_ram_monitor" Grid.Row="1" Grid.RowSpan="4" Grid.Column="8" Grid.ColumnSpan="4"/>
-                <widgets:DiskMonitor x:Name="main_disk_monitor" Grid.Row="6" Grid.RowSpan="4" Grid.Column="8" Grid.ColumnSpan="4" />
-                <widgets:NetworkMonitor x:Name="main_network_monitor" Grid.Row="1" Grid.RowSpan="9" Grid.Column="12" Grid.ColumnSpan="4" Margin="10"/>
+                <widgets:MultiMedia x:Name="main_multimedia"  Grid.Row="1" Grid.RowSpan="9" Grid.Column="12" Grid.ColumnSpan="4" />
+                <widgets:Calandar x:Name="main_calandar" Grid.Row="1" Grid.RowSpan="9" Grid.Column="0" Grid.ColumnSpan="3" />
+                <widgets:CpuRamMonitor x:Name="main_cpu_ram_monitor" Grid.Row="1" Grid.RowSpan="4" Grid.Column="16" Grid.ColumnSpan="4"/>
+                <widgets:DiskMonitor x:Name="main_disk_monitor" Grid.Row="5" Grid.RowSpan="5" Grid.Column="16" Grid.ColumnSpan="4" />
+                <widgets:NetworkMonitor x:Name="main_network_monitor" Grid.Row="1" Grid.RowSpan="9" Grid.Column="20" Grid.ColumnSpan="4" Margin="0"/>
             </Grid>
         </Grid>
     </Grid>

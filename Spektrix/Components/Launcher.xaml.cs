@@ -31,8 +31,6 @@ namespace Spektrix.Components
 
     public partial class Launcher : UserControl
     {
-        //private DynamicUserSettings settings = new DynamicUserSettings();
-
         private readonly string BackgroundsResourceUrl = "pack://application:,,,/Resources/Backgrounds/";
         private readonly string IconsResourceUrl = "pack://application:,,,/Resources/AppIcons/";
 

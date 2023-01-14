@@ -64,7 +64,15 @@ namespace Spektrix.Components
 
         private void OpenSettings(object sender, EventArgs e)
         {
-            MessageBox.Show("Settings Opened!");
+            SettingsWindow win2 = new SettingsWindow();
+            win2.InitializeComponent();
+            win2.Show();
+
+            MainWindow win1 = (MainWindow)Window.GetWindow(this);
+            //win1.Close();
+            win1.Height = SystemParameters.PrimaryScreenHeight * 0.5;
+            win1.Width = SystemParameters.PrimaryScreenWidth * 0.5;
+            win1.InitializeComponent();
         }
 
         // Iterate through each groups and set visibility
