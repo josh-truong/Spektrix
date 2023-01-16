@@ -97,7 +97,7 @@
         </Grid>
 
 
-        <Grid x:Name="exit" MouseDown="Exit"  Grid.Row="10" Grid.Column="20" Background="Gray"/>
+        <!--<Grid x:Name="exit" MouseDown="Exit"  Grid.Row="10" Grid.Column="20" Background="Gray"/>-->
 
         <components:Group x:Name="main_group" 
                              Grid.Row="6" Grid.RowSpan="8"
