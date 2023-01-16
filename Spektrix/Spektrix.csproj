@@ -144,7 +144,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Components\TabBar.xaml">
+    <Page Include="Components\TabMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,8 +166,8 @@
     <Compile Include="Components\Tab.xaml.cs">
       <DependentUpon>Tab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Components\TabBar.xaml.cs">
-      <DependentUpon>TabBar.xaml</DependentUpon>
+    <Compile Include="Components\TabMenu.xaml.cs">
+      <DependentUpon>TabMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\Group.xaml.cs">
       <DependentUpon>Group.xaml</DependentUpon>

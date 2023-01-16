@@ -92,7 +92,7 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <components:TabBar x:Name="main_tab_bar" 
+            <components:TabMenu x:Name="main_tab_bar" 
                                 Grid.Row="1" Grid.RowSpan="2"/>
         </Grid>
 

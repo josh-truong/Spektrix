@@ -32,8 +32,7 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Viewbox Grid.Row="0"
-                     VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Viewbox Grid.Row="0">
                         <Image x:Name="ApplicationIcon"
                                VerticalAlignment="Center" HorizontalAlignment="Center"
                                Stretch="UniformToFill" />

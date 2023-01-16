@@ -82,7 +82,7 @@ namespace Spektrix
         }
 
         // Initialize initializes the UI of the component
-        private void Initialize(object sender = null, RoutedEventArgs e = null)
+        public void Initialize(object sender = null, RoutedEventArgs e = null)
         {
             // Enable Blurred Window Background
             ApplicationBackground.SetBackground(AccentState.ACCENT_ENABLE_BLURBEHIND);

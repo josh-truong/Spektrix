@@ -18,7 +18,7 @@ namespace Spektrix.Components
         public readonly string Background;
         public readonly string Icon;
         public readonly string Name;
-        public readonly string Action;
+        public string Action;
 
         public LauncherInfo(string[] info)
         {
@@ -34,7 +34,7 @@ namespace Spektrix.Components
         private readonly string BackgroundsResourceUrl = "pack://application:,,,/Resources/Backgrounds/";
         private readonly string IconsResourceUrl = "pack://application:,,,/Resources/AppIcons/";
 
-        private LauncherInfo panelInfo;
+        public LauncherInfo panelInfo;
 
         public Launcher()
         {
@@ -46,11 +46,6 @@ namespace Spektrix.Components
         {
             // Generates ID to access user settings key
             string key = $"Group{group}Launcher{launcher}";
-            //string background = Properties.Settings.Default.Get(key + "Background", "");
-            //string icon = Properties.Settings.Default.Get(key + "Icon", "");
-            //string name = Properties.Settings.Default.Get(key + "Name", "");
-            //string action = Properties.Settings.Default.Get(key + "Action", "");
-
             string background = ApplicationSettingsManager.Get(key + "Background");
             string icon = ApplicationSettingsManager.Get(key + "Icon");
             string name = ApplicationSettingsManager.Get(key + "Name");
@@ -59,10 +54,8 @@ namespace Spektrix.Components
             panelInfo = new LauncherInfo(new string[4] { background, icon, name, action });
 
             // Sets information to User Control
-            try { this.ApplicationIcon.Source = new BitmapImage(new Uri(IconsResourceUrl + panelInfo.Icon)); }
-            catch { this.ApplicationIcon.Source = null; }
-            this.ApplicationName.Text = panelInfo.Name;
-            this.ApplicationName.FontSize = SystemParameters.PrimaryScreenHeight * 0.025;
+            SetIcon(panelInfo.Icon);
+            SetName(panelInfo.Name);
         }
 
         // Initialize initializes the UI of the component
@@ -114,13 +107,10 @@ namespace Spektrix.Components
         {
             // Set Application Card to a solid background image
             this.panel_bar.Opacity = 1.0;
-            ImageBrush brush = new ImageBrush();
-            try { brush.ImageSource = new BitmapImage(new Uri(BackgroundsResourceUrl + panelInfo.Background)); }
-            catch { brush.ImageSource = null; }
-            this.Background = brush;
+            SetBackground(panelInfo.Background);
         }
 
-        private void DefaultBackground(object sender = null, RoutedEventArgs e = null)
+        public void DefaultBackground(object sender = null, RoutedEventArgs e = null)
         {
             // Set Application Card to a solid color semi-transparent background
             this.panel_bar.Opacity = 0.5;
@@ -137,10 +127,40 @@ namespace Spektrix.Components
             {
                 if (String.IsNullOrEmpty(panelInfo.Action)) return;
                 Process.Start(panelInfo.Action);
-                MainWindow win = (MainWindow)Window.GetWindow(this);
-                win.Uninitialize();
+                try
+                {
+                    // Only for main window and not settings window
+                    MainWindow win = (MainWindow)Window.GetWindow(this);
+                    win.Uninitialize();
+                }
+                catch { }
             }
             catch (Exception err) { MessageBox.Show($"Path to \"{panelInfo.Name}\" executable does not exist.\nSet Path: {panelInfo.Action}\n\n{err}"); }
+        }
+
+        public void SetBackground(string filename)
+        {
+            ImageBrush brush = new ImageBrush();
+            try { brush.ImageSource = new BitmapImage(new Uri(BackgroundsResourceUrl + filename)); }
+            catch { brush.ImageSource = null; }
+            this.Background = brush;
+        }
+
+        public void SetIcon(string filename)
+        {
+            try { this.ApplicationIcon.Source = new BitmapImage(new Uri(IconsResourceUrl + filename)); }
+            catch { this.ApplicationIcon.Source = null; }
+        }
+
+        public void SetName(string name)
+        {
+            this.ApplicationName.Text = name;
+            this.ApplicationName.FontSize = SystemParameters.PrimaryScreenHeight * 0.025;
+        }
+
+        public void SetAction(string action)
+        {
+            panelInfo.Action = action;
         }
     }
 }

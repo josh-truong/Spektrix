@@ -15,7 +15,7 @@ C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\Calandar.g.c
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\CpuRamMonitor.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\DateTimeDisplay.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Components\Tab.g.cs
-C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Components\TabBar.g.cs
+C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Components\TabMenu.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Components\Group.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\MainWindow.g.cs
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\DiskMonitor.g.cs
@@ -32,7 +32,7 @@ C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\Calandar.bam
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\CpuRamMonitor.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\DateTimeDisplay.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Components\Tab.baml
-C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Components\TabBar.baml
+C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Components\TabMenu.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Components\Group.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\MainWindow.baml
 C:\Users\joshk\OneDrive\Desktop\Spektrix\Spektrix\obj\Debug\Widgets\DiskMonitor.baml

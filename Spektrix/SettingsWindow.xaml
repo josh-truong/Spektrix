@@ -3,12 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Spektrix"
+        xmlns:local="clr-namespace:Spektrix" xmlns:components="clr-namespace:Spektrix.Components"
         mc:Ignorable="d"
         Topmost="True"
         Title="Spektrix Settings" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
@@ -42,18 +54,57 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <ListBox Name="lb" 
-                 Grid.Row="1" Grid.RowSpan="8"
-                 Grid.Column="1" Grid.ColumnSpan="4"
-                 SelectionChanged="ItemSelection" SelectionMode="Single" />
 
-        <Border Background="Black"
-                Grid.Row="1" Grid.RowSpan="6" 
-                Grid.Column="10" Grid.ColumnSpan="4">
+        <Viewbox Grid.Row="2" Grid.Column="1">
+            <Label Content="Group"/>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="4">
+            <Label Content="Launcher"/>
+        </Viewbox>
+        <ComboBox x:Name="cb_group" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" SelectionChanged="GroupSelection" />
+        <ComboBox x:Name="cb_launcher" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" SelectionChanged="LauncherSelection" />
+
+
+        <Viewbox Grid.Row="5" Grid.Column="1">
+            <Label Content="Group Icon" />
+        </Viewbox>
+        <Border Grid.Row="2" Grid.RowSpan="4" 
+                Grid.Column="7" Grid.ColumnSpan="2" Background="Black">
             <Viewbox>
-                <Image x:Name="image_display"/>
+                <Image x:Name="tab_preview" />
             </Viewbox>
         </Border>
+        <ListBox x:Name="cb_tab_icon" Grid.Row="6" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" SelectionChanged="TabIconSelection" SelectionMode="Single" />
         
+        
+        <Viewbox Grid.Row="8" Grid.Column="1">
+            <Label Content="Backgrounds"/>
+        </Viewbox>
+        <ListBox x:Name="cb_background" Grid.Row="9" Grid.RowSpan="5" Grid.Column="1" Grid.ColumnSpan="3" SelectionChanged="BackgroundSelection" SelectionMode="Single" />
+        
+        
+        <Viewbox Grid.Row="8" Grid.Column="4">
+            <Label Content="App Icons"/>
+        </Viewbox>
+        <ListBox x:Name="cb_icon" Grid.Row="9" Grid.RowSpan="5" Grid.Column="4" Grid.ColumnSpan="4" SelectionChanged="IconSelection" SelectionMode="Single" />
+        
+        
+        <Viewbox Grid.Row="6" Grid.Column="4">
+            <Label Content="Name"/>
+        </Viewbox>
+        <TextBox x:Name="launcher_name" Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="3" TextChanged="NameSelection" />
+
+        <Border Grid.Row="2" Grid.RowSpan="15" 
+                Grid.Column="10" Grid.ColumnSpan="4"
+                BorderBrush="Black" BorderThickness="2" Background="Black">
+            <components:Launcher x:Name="launcher_preview"/>
+        </Border>
+
+        <Label Content="Launcher Action (.exe filepath, url, cmd commands, etc...)" Grid.Row="15" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="6"/>
+        <TextBox x:Name="launcher_action" Grid.Row="16" Grid.Column="1" Grid.ColumnSpan="8" TextChanged="ActionSelection" />
+
+        <Button x:Name="Save" Grid.Row="18" Grid.Column="5" Grid.ColumnSpan="2" Content="Save Launcher" Click="SaveSettings"/>
+        <Button x:Name="Cancel" Grid.Row="18" Grid.Column="12" Grid.ColumnSpan="2" Content="Cancel Changes" Click="SetupLauncher" />
+        <Button Grid.Row="18" Grid.Column="10" Grid.ColumnSpan="2" Content="Exit" Click="Exit"/>
     </Grid>
 </Window>

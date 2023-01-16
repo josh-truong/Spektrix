@@ -34,9 +34,7 @@ namespace Spektrix.Code
         // Usage Examples
         // Set default icons for group tab
         //Properties.Settings.Default.Set($"T0", "hexagons.png");
-        //Properties.Settings.Default.Set($"T1", "Arc.png");
-        //Properties.Settings.Default.Set($"T2", "gamepad.png");
-        //Properties.Settings.Default.Set($"T3", "dashboard.png");
+        //string background = Properties.Settings.Default.Get(key + "Background", "");
 
         [Obsolete("ApplicationSettingsBase.ContainsKey does not work. Use Configuration.ContainsKey.", true)]
         public static bool ContainsKey(this ApplicationSettingsBase settings, string key)
