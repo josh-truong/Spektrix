@@ -1,6 +1,5 @@
 ﻿using Spektrix.Code;
 using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -130,7 +129,7 @@ namespace Spektrix.Widgets
                 }
                 catch { }
             }
-            
+
             WriteLineColor("-- New Source: " + session.Id, ConsoleColor.Green);
             Application.Current.Dispatcher.Invoke(AddSession);
         }
@@ -141,7 +140,7 @@ namespace Spektrix.Widgets
             WriteLineColor("-- Removed Source: " + session.Id, ConsoleColor.Red);
             void RemoveSession()
             {
-                try 
+                try
                 {
                     Border container = GetContainer(session);
                     if (container == null) return;
@@ -197,7 +196,7 @@ namespace Spektrix.Widgets
                 catch { }
             }
             WriteLineColor($"{sender.Id} is now {args.PlaybackStatus}", ConsoleColor.Yellow);
-            
+
             Application.Current.Dispatcher.Invoke(PlaybackState);
             Application.Current.Dispatcher.Invoke(() => { UpdateMediaDisplay(sender); });
         }

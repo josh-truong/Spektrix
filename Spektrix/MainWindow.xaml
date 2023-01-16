@@ -81,7 +81,7 @@
         </Grid>
 
         <Grid x:Name="startup_bar" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="17">
-            <Rectangle Fill="Red" MouseEnter="Initialize" Margin="0,0,0,0"  Height="1"
+            <Rectangle Fill="White" MouseEnter="Initialize" Margin="0,0,0,0"  Height="0.1"
                        HorizontalAlignment="Stretch" VerticalAlignment="Top" />
         </Grid>
 

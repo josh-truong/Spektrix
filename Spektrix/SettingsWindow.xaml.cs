@@ -1,25 +1,10 @@
 ﻿using Spektrix.Code;
-using Spektrix.Components;
-using Spektrix.Properties;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Xml.Linq;
 
 namespace Spektrix
 {
@@ -48,11 +33,11 @@ namespace Spektrix
             int groupCount = 4; int launcherCount = 6;
 
             for (int i = 0; i < groupCount; i++)
-                this.cb_group.Items.Add(new ComboBoxItem() { Tag=i, Name=$"Group{i}", Content = $"Group {i}" });
+                this.cb_group.Items.Add(new ComboBoxItem() { Tag = i, Name = $"Group{i}", Content = $"Group {i}" });
             this.cb_group.SelectedIndex = CurrentGroup;
 
             for (int i = 0; i < launcherCount; i++)
-                this.cb_launcher.Items.Add(new ComboBoxItem() { Tag=i, Name=$"Launcher{i}", Content = $"Launcher {i}" });
+                this.cb_launcher.Items.Add(new ComboBoxItem() { Tag = i, Name = $"Launcher{i}", Content = $"Launcher {i}" });
             this.cb_launcher.SelectedIndex = CurrentLauncher;
 
             ApplicationResources resources = new ApplicationResources();
@@ -122,7 +107,7 @@ namespace Spektrix
             this.launcher_name.Text = CurrentName;
         }
 
-        private void SetupLauncher(object sender = null, EventArgs e=null)
+        private void SetupLauncher(object sender = null, EventArgs e = null)
         {
             string key = $"Group{CurrentGroup}Launcher{CurrentLauncher}";
             CurrentBackground = ApplicationSettingsManager.Get($"{key}Background");
