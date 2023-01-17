@@ -44,18 +44,19 @@ This work is licensed under a
  - Double click on startup bar to avoid pseudo start
  - Move widgets into their own panels
  - Widgets snap to grid cell
-
-## Notes
- - Code Directory: Contains independent classes to be used by any user controls
- - Components Directory: Contains the xaml and cs file for the main application (Spektrix)
- - Resources Directory: Contains all the image/font assets for the application
- - Widgets Directory: Contains independent user controls that can be applied to the main application(can be excluded/included)
  - Add search bar to filter resources
  - Add upload image option
  - Add all available executables paths to settings.
  - Reapproach project towards MVVM architectural pattern
    - Data binding
    - Move UI C# code to XAML
+
+
+## Notes
+ - Code Directory: Contains independent classes to be used by any user controls
+ - Components Directory: Contains the xaml and cs file for the main application (Spektrix)
+ - Resources Directory: Contains all the image/font assets for the application
+ - Widgets Directory: Contains independent user controls that can be applied to the main application(can be excluded/included)
 
 ## References
 - [https://i.redd.it/ewiwm9b3bi7a1.png](https://i.redd.it/ewiwm9b3bi7a1.png)
