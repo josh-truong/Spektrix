@@ -53,6 +53,9 @@ This work is licensed under a
  - Add search bar to filter resources
  - Add upload image option
  - Add all available executables paths to settings.
+ - Reapproach project towards MVVM architectural pattern
+   - Data binding
+   - Move UI C# code to XAML
 
 ## References
 - [https://i.redd.it/ewiwm9b3bi7a1.png](https://i.redd.it/ewiwm9b3bi7a1.png)
