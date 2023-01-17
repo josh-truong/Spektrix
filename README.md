@@ -20,7 +20,7 @@ This work is licensed under a
  - All images, artworks and backgrounds used in this skin are not created by me, and all rights goes to their original creators and copyright holders
 
 ## System Requirements
-- Windows
+- Windows x64
 
 ## Features
  - [x] WPF application
