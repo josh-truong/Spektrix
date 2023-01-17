@@ -41,6 +41,9 @@ This work is licensed under a
 ## Pending Improvements
  - Left click on launcher to open settings
  - [Spectrum v2.1 Designs](https://www.deviantart.com/birdalliance/art/SPECTRUM-Launcher-v2-1-for-Rainmeter-747935537)
+ - Double click on startup bar to avoid pseudo start
+ - Move widgets into their own panels
+ - Widgets snap to grid cell
 
 ## Notes
  - Code Directory: Contains independent classes to be used by any user controls
