@@ -15,7 +15,7 @@ This work is licensed under a
 ![](https://github.com/josh-truong/Spektrix/blob/main/demo.png)
 
 ## Credits
- - Application design and functionality attributed to ["SPECTRUM Launcher for Rainmeter by BirdAlliance".](https://www.deviantart.com/birdalliance/art/SPECTRUM-Launcher-v3-for-Rainmeter-762183493)
+ - Application and functionality design attributed to ["SPECTRUM Launcher for Rainmeter by BirdAlliance".](https://www.deviantart.com/birdalliance/art/SPECTRUM-Launcher-v3-for-Rainmeter-762183493)
  - The icons/images used in this skin are created by https://materialdesignicons.com/, https://icons8.com/, and https://www.pixiv.net/en/artworks/59183487.
  - All images, artworks and backgrounds used in this skin are not created by me, and all rights goes to their original creators and copyright holders
 
