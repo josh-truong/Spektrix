@@ -50,6 +50,9 @@ This work is licensed under a
  - Components Directory: Contains the xaml and cs file for the main application (Spektrix)
  - Resources Directory: Contains all the image/font assets for the application
  - Widgets Directory: Contains independent user controls that can be applied to the main application(can be excluded/included)
+ - Add search bar to filter resources
+ - Add upload image option
+ - Add all available executables paths to settings.
 
 ## References
 - [https://i.redd.it/ewiwm9b3bi7a1.png](https://i.redd.it/ewiwm9b3bi7a1.png)
