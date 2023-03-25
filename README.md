@@ -50,6 +50,7 @@ This work is licensed under a
  - Reapproach project towards MVVM architectural pattern
    - Data binding
    - Move UI C# code to XAML
+ - Custom layout with snap grid implementation
 
 
 ## Notes
