@@ -51,6 +51,7 @@ This work is licensed under a
    - Data binding
    - Move UI C# code to XAML
  - Custom layout with snap grid implementation
+ - Artwork for games using [SteamGridDB](https://www.steamgriddb.com/)
 
 
 ## Notes
